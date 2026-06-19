@@ -5,7 +5,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 export const metadata: Metadata = {
   title:       'About',
   description: 'Ascension is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Business by day. Social by night. Kava, kratom, mocktails, and community.',
-  alternates:  { canonical: 'https://holybula.com/about' },
+  alternates:  { canonical: 'https://ascensionlounge.com/about' },
 }
 
 export default function AboutPage() {

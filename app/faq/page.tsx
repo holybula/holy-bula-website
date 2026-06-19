@@ -6,7 +6,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 export const metadata: Metadata = {
   title:       'FAQ',
   description: 'Frequently asked questions about Ascension — kava, kratom, alcohol-free social club, events, and locations in Fort Lauderdale and Hollywood, FL.',
-  alternates:  { canonical: 'https://holybula.com/faq' },
+  alternates:  { canonical: 'https://ascensionlounge.com/faq' },
 }
 
 export default function FaqPage() {

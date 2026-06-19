@@ -4,7 +4,7 @@ import { GOLD_GRADIENT_TEXT, REWARDS_MEMBER_URL, REWARDS_SIGNUP_URL } from '@/li
 export const metadata: Metadata = {
   title:       'Rewards',
   description: 'Join Ascension Rewards — earn points on every visit, unlock perks, and stay connected to the circle.',
-  alternates:  { canonical: 'https://holybula.com/rewards' },
+  alternates:  { canonical: 'https://ascensionlounge.com/rewards' },
 }
 
 export default function RewardsPage() {

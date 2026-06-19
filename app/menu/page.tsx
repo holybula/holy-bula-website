@@ -5,7 +5,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 export const metadata: Metadata = {
   title:       'Menu',
   description: 'Ascension menu — premium kava, kratom teas, coffees, mocktails, and functional drinks. Fort Lauderdale & Hollywood, FL.',
-  alternates:  { canonical: 'https://holybula.com/menu' },
+  alternates:  { canonical: 'https://ascensionlounge.com/menu' },
 }
 
 export default function MenuPage() {

@@ -12,7 +12,7 @@ import LocationHours  from '@/components/home/LocationHours'
 export const metadata: Metadata = {
   title:       'Ascension | Elevate Your Circle — Fort Lauderdale & Hollywood, FL',
   description: "Ascension is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Kava, kratom teas, mocktails, matcha, coffee. Events every night. Business by day. Social by night.",
-  alternates:  { canonical: 'https://holybula.com' },
+  alternates:  { canonical: 'https://ascensionlounge.com' },
 }
 
 const structuredData = {
@@ -20,7 +20,7 @@ const structuredData = {
   '@type':       'BarOrPub',
   name:          'Ascension',
   description:   "Premium alcohol-free social club. Fort Lauderdale & Hollywood, FL.",
-  url:           'https://holybula.com',
+  url:           'https://ascensionlounge.com',
   email:         'info@ascensionlounge.com',
   servesCuisine: ['Kava', 'Kratom Tea', 'Mocktails', 'Matcha', 'Coffee', 'Protein Shakes'],
   openingHours:  ['Mo-Th 08:00-02:00', 'Fr 08:00-03:00', 'Sa 10:00-03:00', 'Su 10:00-02:00'],

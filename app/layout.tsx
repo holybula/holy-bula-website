@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type:        'website',
     locale:      'en_US',
-    url:         'https://holybula.com',
+    url:         'https://ascensionlounge.com',
     siteName:    'Ascension',
     title:       'Ascension | Elevate Your Circle',
     description: 'Premium kava bar and social club. Fort Lauderdale & Hollywood, FL.',

@@ -4,7 +4,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 export const metadata: Metadata = {
   title:       'Ascension Reviews',
   description: 'Read what guests say about Ascension — premium kava bar and social club in Fort Lauderdale and Hollywood, FL.',
-  alternates:  { canonical: 'https://holybula.com/reviews' },
+  alternates:  { canonical: 'https://ascensionlounge.com/reviews' },
 }
 
 const GOOGLE_REVIEWS_URL =

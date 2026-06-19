@@ -5,7 +5,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 export const metadata: Metadata = {
   title:       'Contact',
   description: 'Contact Ascension in Fort Lauderdale or Hollywood, FL. Questions, events, partnerships, and private gatherings.',
-  alternates:  { canonical: 'https://holybula.com/contact' },
+  alternates:  { canonical: 'https://ascensionlounge.com/contact' },
 }
 
 export default function ContactPage() {

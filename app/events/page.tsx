@@ -5,7 +5,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 export const metadata: Metadata = {
   title:       'Events',
   description: 'Weekly events at Ascension Fort Lauderdale and Hollywood. Trivia, poker, ladies night, bingo, pool tournaments, and more — something every night.',
-  alternates:  { canonical: 'https://holybula.com/events' },
+  alternates:  { canonical: 'https://ascensionlounge.com/events' },
 }
 
 export default function EventsPage() {
