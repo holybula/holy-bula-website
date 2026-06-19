@@ -37,14 +37,14 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/images/logo/Holy_Bula_vector_1.PNG"
-                alt="Holy Bula"
+                src="/ascension-logo.svg"
+                alt="Ascension"
                 width={36}
                 height={36}
                 className="w-9 h-9 object-contain flex-shrink-0"
               />
               <span className="font-logo text-[1rem] text-white">
-                Holy<span style={{ color: '#9333ea' }}>Bula</span>
+                Ascension
               </span>
             </div>
             <p className="text-base text-hb-gold mb-5 font-medium italic">
@@ -57,7 +57,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Holy Bula on ${s.label}`}
+                  aria-label={`Ascension on ${s.label}`}
                   className="w-9 h-9 border border-white/[0.08] flex items-center justify-center text-white/35 hover:text-hb-gold hover:border-[rgba(212,175,55,0.35)] transition-all duration-200"
                 >
                   <InstagramIcon />
@@ -158,7 +158,7 @@ export default function Footer() {
         <div className="gold-line mb-5" />
         <div className="flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-[0.6rem] tracking-[0.1em] uppercase text-white/18">
-            © {new Date().getFullYear()} Holy Bula. All rights reserved.
+            © {new Date().getFullYear()} Ascension. All rights reserved.
           </p>
           <div className="flex gap-5">
             {[{ label: 'Privacy Policy', href: '/privacy' }, { label: 'Terms', href: '/terms' }, { label: 'Contact', href: '/contact' }].map(l => (

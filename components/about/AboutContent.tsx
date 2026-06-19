@@ -67,17 +67,17 @@ export default function AboutContent() {
 
       <SectionBlock eyebrow="About Us" title="About Us" className="bg-[#0a0a0a]" id="about-us">
         <Prose>
-          Holy Bula Kava Bar &amp; Lounge started in 2023 with a simple goal: to create an enjoyable space and culture built upon individuals who are seeking to be more. We opened doors to grow a community via a bar &amp; lounge that feels welcoming any time of the day or night. Whether you come to study, grab-n&apos;-go, or hang out, we are determined to have you leaving with a smile.
+          Ascension Kava Bar &amp; Lounge started in 2023 with a simple goal: to create an enjoyable space and culture built upon individuals who are seeking to be more. We opened doors to grow a community via a bar &amp; lounge that feels welcoming any time of the day or night. Whether you come to study, grab-n&apos;-go, or hang out, we are determined to have you leaving with a smile.
         </Prose>
       </SectionBlock>
 
       <SectionBlock
         eyebrow="Why Visit"
-        title="Why Visit Holy Bula Kava Bar & Lounge?"
+        title="Why Visit Ascension Kava Bar & Lounge?"
         id="why-visit"
       >
         <Prose>
-          We believe the people you surround yourself with determines your trajectory. Holy Bula isn&apos;t just a bar; it&apos;s a community curated for those who strive for more. Between our specialty drinks and amazing culture, you&apos;ll find a comforting ambiance designed for good times, deep focus, and genuine connection. Come for the drinks, stay for the culture, and leave better than you came.
+          We believe the people you surround yourself with determines your trajectory. Ascension isn&apos;t just a bar; it&apos;s a community curated for those who strive for more. Between our specialty drinks and amazing culture, you&apos;ll find a comforting ambiance designed for good times, deep focus, and genuine connection. Come for the drinks, stay for the culture, and leave better than you came.
         </Prose>
       </SectionBlock>
 
@@ -155,14 +155,14 @@ export default function AboutContent() {
               id="about-cta-heading"
               className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-white leading-tight mb-5"
             >
-              Visit <span style={GOLD_GRADIENT_TEXT}>Holy Bula</span> Today
+              Visit <span style={GOLD_GRADIENT_TEXT}>Ascension</span> Today
             </h2>
             <p className="text-base text-white/72 leading-relaxed mb-8 max-w-sm mx-auto">
               Two South Florida locations. Same premium drinks, events, and community.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/locations" className="btn-gold">
-                Visit Holy Bula Today
+                Visit Ascension Today
               </Link>
               <Link href="/events" className="btn-outline">
                 View Events

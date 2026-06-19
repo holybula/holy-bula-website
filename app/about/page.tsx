@@ -4,7 +4,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title:       'About',
-  description: 'Holy Bula is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Business by day. Social by night. Kava, kratom, mocktails, and community.',
+  description: 'Ascension is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Business by day. Social by night. Kava, kratom, mocktails, and community.',
   alternates:  { canonical: 'https://holybula.com/about' },
 }
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
         />
 
         <div className="container-hb relative z-10">
-          <p className="eyebrow">About Holy Bula</p>
+          <p className="eyebrow">About Ascension</p>
           <div className="gold-line-left" />
           <h1
             id="about-page-heading"
@@ -37,7 +37,7 @@ export default function AboutPage() {
             <span style={GOLD_GRADIENT_TEXT}>Social By Night.</span>
           </h1>
           <p className="text-white/72 text-base md:text-lg mt-4 max-w-2xl leading-relaxed">
-            Holy Bula is where entrepreneurs, students, professionals, creators, and friends come together to work, connect, compete, and unwind.
+            Ascension is where entrepreneurs, students, professionals, creators, and friends come together to work, connect, compete, and unwind.
           </p>
         </div>
       </section>

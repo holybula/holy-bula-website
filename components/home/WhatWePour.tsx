@@ -105,7 +105,7 @@ export default function WhatWePour({ pageMode = false }: WhatWePourProps) {
                 <div className="relative w-40 h-40 md:w-52 md:h-52">
                   <Image
                     src="/images/drinks/kratom_cup.PNG"
-                    alt="Holy Bula Kratom Tea"
+                    alt="Ascension Kratom Tea"
                     fill
                     className="object-contain drop-shadow-2xl"
                     sizes="(max-width: 768px) 160px, 208px"

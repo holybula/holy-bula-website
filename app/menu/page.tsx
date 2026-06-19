@@ -4,7 +4,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title:       'Menu',
-  description: 'Holy Bula menu — premium kava, kratom teas, coffees, mocktails, and functional drinks. Fort Lauderdale & Hollywood, FL.',
+  description: 'Ascension menu — premium kava, kratom teas, coffees, mocktails, and functional drinks. Fort Lauderdale & Hollywood, FL.',
   alternates:  { canonical: 'https://holybula.com/menu' },
 }
 

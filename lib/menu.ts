@@ -1,6 +1,6 @@
 import type { LocationId } from './constants'
 
-// What We Pour — six categories with real Holy Bula data
+// What We Pour — six categories with real Ascension data
 
 export interface LocationMenu {
   image: string
@@ -10,11 +10,11 @@ export interface LocationMenu {
 export const LOCATION_MENUS: Record<LocationId, LocationMenu> = {
   'fort-lauderdale': {
     image: '/images/menu/fort-lauderdale-menu.PNG',
-    alt:   'Holy Bula Fort Lauderdale drink menu — kava, kratom teas, coffee, matcha, mocktails, and more',
+    alt:   'Ascension Fort Lauderdale drink menu — kava, kratom teas, coffee, matcha, mocktails, and more',
   },
   'hollywood': {
     image: '/images/menu/hollywood-menu.PNG',
-    alt:   'Holy Bula Hollywood drink menu — kava, kratom teas, coffee, matcha, mocktails, and more',
+    alt:   'Ascension Hollywood drink menu — kava, kratom teas, coffee, matcha, mocktails, and more',
   },
 }
 

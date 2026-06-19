@@ -3,7 +3,7 @@ import { GOLD_GRADIENT_TEXT, REWARDS_MEMBER_URL, REWARDS_SIGNUP_URL } from '@/li
 
 export const metadata: Metadata = {
   title:       'Rewards',
-  description: 'Join Holy Bula Rewards — earn points on every visit, unlock perks, and stay connected to the circle.',
+  description: 'Join Ascension Rewards — earn points on every visit, unlock perks, and stay connected to the circle.',
   alternates:  { canonical: 'https://holybula.com/rewards' },
 }
 
@@ -22,14 +22,14 @@ export default function RewardsPage() {
           aria-hidden="true"
         />
         <div className="container-hb relative z-10">
-          <p className="eyebrow">Holy Bula Rewards</p>
+          <p className="eyebrow">Ascension Rewards</p>
           <div className="gold-line-left" />
           <h1 className="max-w-3xl text-[clamp(2rem,6vw,3.75rem)] font-extrabold leading-[1.05] tracking-tight text-white">
             Elevate Your Circle.{' '}
             <span style={GOLD_GRADIENT_TEXT}>Earn As You Sip.</span>
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/72 md:text-lg">
-            Earn rewards, stay updated on events, unlock member perks, and become part of the Holy Bula community.
+            Earn rewards, stay updated on events, unlock member perks, and become part of the Ascension community.
           </p>
         </div>
       </section>
@@ -61,10 +61,10 @@ export default function RewardsPage() {
                   aria-hidden="true"
                 />
                 <h2 className="mb-4 text-xl font-extrabold text-white md:text-2xl">
-                  Join Holy Bula Rewards
+                  Join Ascension Rewards
                 </h2>
                 <p className="mb-8 text-base leading-relaxed text-white/72 md:text-lg">
-                  Sign up for rewards and start earning perks when you visit Holy Bula.
+                  Sign up for rewards and start earning perks when you visit Ascension.
                 </p>
                 <a
                   href={REWARDS_SIGNUP_URL}

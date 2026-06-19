@@ -5,7 +5,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title:       'FAQ',
-  description: 'Frequently asked questions about Holy Bula — kava, kratom, alcohol-free social club, events, and locations in Fort Lauderdale and Hollywood, FL.',
+  description: 'Frequently asked questions about Ascension — kava, kratom, alcohol-free social club, events, and locations in Fort Lauderdale and Hollywood, FL.',
   alternates:  { canonical: 'https://holybula.com/faq' },
 }
 
@@ -38,7 +38,7 @@ export default function FaqPage() {
             <span style={GOLD_GRADIENT_TEXT}>Answered.</span>
           </h1>
           <p className="text-white/72 text-base md:text-lg mt-4 max-w-lg leading-relaxed">
-            Everything you need to know about kava, kratom, and the Holy Bula experience.
+            Everything you need to know about kava, kratom, and the Ascension experience.
           </p>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function FaqPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/locations" className="btn-gold">
-                Visit Holy Bula
+                Visit Ascension
               </Link>
               <Link href="/about" className="btn-outline">
                 About Us

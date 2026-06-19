@@ -18,22 +18,22 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id:       'need-kava',
     question: 'Do I need to drink kava to come?',
-    answer:   'No. Holy Bula also serves coffee, teas, mocktails, protein drinks, functional beverages, and more.',
+    answer:   'No. Ascension also serves coffee, teas, mocktails, protein drinks, functional beverages, and more.',
   },
   {
     id:       'work-study',
-    question: 'Can I work or study at Holy Bula?',
-    answer:   'Yes. During the day, Holy Bula is built for entrepreneurs, students, remote workers, creators, and professionals.',
+    question: 'Can I work or study at Ascension?',
+    answer:   'Yes. During the day, Ascension is built for entrepreneurs, students, remote workers, creators, and professionals.',
   },
   {
     id:       'at-night',
     question: 'What happens at night?',
-    answer:   'At night, Holy Bula becomes a social hub with events, games, networking, and community.',
+    answer:   'At night, Ascension becomes a social hub with events, games, networking, and community.',
   },
   {
     id:       'alcohol',
     question: 'Do you serve alcohol?',
-    answer:   'No. Holy Bula is an alcohol-free social experience.',
+    answer:   'No. Ascension is an alcohol-free social experience.',
   },
   {
     id:       'events',
@@ -43,6 +43,6 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id:       'locations',
     question: 'Where are you located?',
-    answer:   'Holy Bula has locations in Fort Lauderdale and Hollywood.',
+    answer:   'Ascension has locations in Fort Lauderdale and Hollywood.',
   },
 ]

@@ -10,15 +10,15 @@ import RewardsTeaser  from '@/components/home/RewardsTeaser'
 import LocationHours  from '@/components/home/LocationHours'
 
 export const metadata: Metadata = {
-  title:       'Holy Bula | Elevate Your Circle — Fort Lauderdale & Hollywood, FL',
-  description: "Holy Bula is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Kava, kratom teas, mocktails, matcha, coffee. Events every night. Business by day. Social by night.",
+  title:       'Ascension | Elevate Your Circle — Fort Lauderdale & Hollywood, FL',
+  description: "Ascension is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Kava, kratom teas, mocktails, matcha, coffee. Events every night. Business by day. Social by night.",
   alternates:  { canonical: 'https://holybula.com' },
 }
 
 const structuredData = {
   '@context':    'https://schema.org',
   '@type':       'BarOrPub',
-  name:          'Holy Bula',
+  name:          'Ascension',
   description:   "Premium alcohol-free social club. Fort Lauderdale & Hollywood, FL.",
   url:           'https://holybula.com',
   email:         'holybulausa@gmail.com',
@@ -29,7 +29,7 @@ const structuredData = {
   location: [
     {
       '@type':   'Place',
-      name:      'Holy Bula Fort Lauderdale',
+      name:      'Ascension Fort Lauderdale',
       address: {
         '@type':         'PostalAddress',
         streetAddress:   '825 N Federal Hwy',
@@ -41,7 +41,7 @@ const structuredData = {
     },
     {
       '@type':   'Place',
-      name:      'Holy Bula Hollywood / Cooper City',
+      name:      'Ascension Hollywood / Cooper City',
       address: {
         '@type':         'PostalAddress',
         streetAddress:   '9630 Stirling Rd Ste 104',

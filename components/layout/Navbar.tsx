@@ -49,17 +49,17 @@ export default function Navbar() {
       >
         <nav className="container-hb flex items-center" aria-label="Main navigation">
 
-          <Link href="/" aria-label="Holy Bula — Home" className="flex items-center gap-3 group flex-shrink-0">
+          <Link href="/" aria-label="Ascension — Home" className="flex items-center gap-3 group flex-shrink-0">
             <Image
-              src="/images/logo/Holy_Bula_vector_1.PNG"
-              alt="Holy Bula logo"
+              src="/ascension-logo.svg"
+              alt="Ascension logo"
               width={36}
               height={36}
               className="w-9 h-9 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
               priority
             />
             <span className="font-logo text-[1.05rem] text-white tracking-wide leading-none">
-              Holy<span style={{ color: '#9333ea' }}>Bula</span>
+              Ascension
             </span>
           </Link>
 

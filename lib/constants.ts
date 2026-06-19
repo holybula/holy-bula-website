@@ -1,12 +1,12 @@
 // ─── Brand Identity ──────────────────────────────────────────
 export const BRAND = {
-  name:          'HolyBula',
-  nameFull:      'Holy Bula',
+  name:          'Ascension',
+  nameFull:      'Ascension',
   tagline:       'Elevate Your Circle.',
   heroHeadline:  'Elevate Your Circle.',
   heroBrand:     'Business By Day. Social By Night.',
 
-  heroSub:       "Holy Bula is where South Florida's driven crowd works, connects, and builds — over the best kava, kratom teas, and mocktails in the city.",
+  heroSub:       "Ascension is where South Florida's driven crowd works, connects, and builds — over the best kava, kratom teas, and mocktails in the city.",
   industry:      'Kava Bar & Social Club',
   instagram:     '@holybulausa',
   instagramUrl:  'https://www.instagram.com/holybulausa',

@@ -4,7 +4,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title:       'Contact',
-  description: 'Contact Holy Bula in Fort Lauderdale or Hollywood, FL. Questions, events, partnerships, and private gatherings.',
+  description: 'Contact Ascension in Fort Lauderdale or Hollywood, FL. Questions, events, partnerships, and private gatherings.',
   alternates:  { canonical: 'https://holybula.com/contact' },
 }
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <p className="eyebrow">Contact</p>
           <div className="gold-line-left" />
           <h1 className="max-w-3xl text-[clamp(2rem,6vw,3.75rem)] font-extrabold leading-[1.05] tracking-tight text-white">
-            Contact <span style={GOLD_GRADIENT_TEXT}>Holy Bula</span>
+            Contact <span style={GOLD_GRADIENT_TEXT}>Ascension</span>
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/72 md:text-lg ">
             Questions, events, partnerships, or private gatherings. Reach out and we&apos;ll get you connected.
@@ -144,7 +144,7 @@ export default function ContactPage() {
                 Events &amp; Private Gatherings
               </h2>
               <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/72 md:text-lg ">
-                Want to host an event, brand night, meetup, tournament, or private gathering at Holy Bula?
+                Want to host an event, brand night, meetup, tournament, or private gathering at Ascension?
                 Reach out and our team will help you get connected.
               </p>
               <a href="mailto:holybulausa@gmail.com" className="btn-gold text-[0.625rem]">

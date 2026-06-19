@@ -12,7 +12,7 @@ const REVIEWS = [
   },
   {
     name:   'Chris R.',
-    review: 'Holy Bula is more than just a kava spot. Great service, great people, and a community feel that makes you want to come back.',
+    review: 'Ascension is more than just a kava spot. Great service, great people, and a community feel that makes you want to come back.',
   },
 ] as const
 

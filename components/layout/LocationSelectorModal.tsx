@@ -162,7 +162,7 @@ export default function LocationSelectorModal({
           )}
 
           <p className="text-[0.625rem] tracking-[0.12em] uppercase text-white/20 text-center mt-6">
-            Holy Bula · Fort Lauderdale & Hollywood, FL
+            Ascension · Fort Lauderdale & Hollywood, FL
           </p>
         </div>
       </div>

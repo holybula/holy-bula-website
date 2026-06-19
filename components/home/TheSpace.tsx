@@ -6,22 +6,22 @@ import AnimatedReveal from '@/components/shared/AnimatedReveal'
 const PHOTOS = [
   {
     src: '/images/interior/holybula-art-1.PNG',
-    alt:   'Holy Bula — packed social night with purple lighting and full bar',
+    alt:   'Ascension — packed social night with purple lighting and full bar',
     grid:  'col-span-1 md:col-span-2 md:row-span-2',
   },
   {
     src:   '/images/interior/holybula-art-4.PNG',
-    alt:   'Holy Bula — vintage portrait art with purple ambient lighting',
+    alt:   'Ascension — vintage portrait art with purple ambient lighting',
     grid:  'col-span-1',
   },
   {
     src: '/images/interior/holybula-art-3.PNG',
-    alt:   'Holy Bula — pool table in dark moody interior',
+    alt:   'Ascension — pool table in dark moody interior',
     grid:  'col-span-1',
   },
   {
     src: '/images/interior/holybula-art-2.PNG',
-    alt:   'Holy Bula — intimate social seating and art wall',
+    alt:   'Ascension — intimate social seating and art wall',
     grid:  'col-span-1 md:col-span-2',
   },
 ] as const

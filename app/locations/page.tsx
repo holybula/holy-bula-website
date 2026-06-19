@@ -4,7 +4,7 @@ import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title:       'Locations',
-  description: 'Visit Holy Bula in Fort Lauderdale or Hollywood, FL. Hours, happy hour, directions, and online ordering for both locations.',
+  description: 'Visit Ascension in Fort Lauderdale or Hollywood, FL. Hours, happy hour, directions, and online ordering for both locations.',
   alternates:  { canonical: 'https://holybula.com/locations' },
 }
 

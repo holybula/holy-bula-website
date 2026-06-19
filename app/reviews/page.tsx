@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title:       'Holy Bula Reviews',
-  description: 'Read what guests say about Holy Bula — premium kava bar and social club in Fort Lauderdale and Hollywood, FL.',
+  title:       'Ascension Reviews',
+  description: 'Read what guests say about Ascension — premium kava bar and social club in Fort Lauderdale and Hollywood, FL.',
   alternates:  { canonical: 'https://holybula.com/reviews' },
 }
 
@@ -19,7 +19,7 @@ const PLACEHOLDER_REVIEWS = [
   {
     name:    'Jordan T.',
     rating:  5,
-    excerpt: 'Holy Bula is my go-to for focus during the day and great energy at night. Truly elevated.',
+    excerpt: 'Ascension is my go-to for focus during the day and great energy at night. Truly elevated.',
   },
   {
     name:    'Sam R.',
@@ -39,7 +39,7 @@ const PLACEHOLDER_REVIEWS = [
   {
     name:    'Morgan P.',
     rating:  5,
-    excerpt: 'From trivia nights to the lounge setup — everything about Holy Bula is intentional and premium.',
+    excerpt: 'From trivia nights to the lounge setup — everything about Ascension is intentional and premium.',
   },
 ] as const
 
@@ -70,14 +70,14 @@ export default function ReviewsPage() {
           aria-hidden="true"
         />
         <div className="container-hb relative z-10 text-center">
-          <p className="eyebrow">Holy Bula Reviews</p>
+          <p className="eyebrow">Ascension Reviews</p>
           <div className="gold-line mx-auto mb-6" style={{ maxWidth: '160px' }} />
           <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-white max-w-4xl mx-auto">
             The Circle Speaks{' '}
             <span style={GOLD_GRADIENT_TEXT}>For Itself.</span>
           </h1>
           <p className="mt-6 max-w-xl mx-auto text-base md:text-lg text-white/72 leading-relaxed">
-            Real guests. Real experiences. See why Holy Bula is South Florida&apos;s premium alcohol-free social club.
+            Real guests. Real experiences. See why Ascension is South Florida&apos;s premium alcohol-free social club.
           </p>
         </div>
       </section>
