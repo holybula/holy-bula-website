@@ -78,12 +78,12 @@ export default function ContactPage() {
                 <p className="mb-2 text-[0.6rem] uppercase tracking-[0.18em] text-white/25">Phone</p>
                 <p className="mb-5 text-sm text-white/60 ">(585) 216-7758</p>
                 <p className="mb-2 text-[0.6rem] uppercase tracking-[0.18em] text-white/25">Email</p>
-                <p className="mb-8 text-sm text-white/60 ">holybulausa@gmail.com</p>
+                <p className="mb-8 text-sm text-white/60 ">info@ascensionlounge.com</p>
                 <div className="flex flex-col gap-2 sm:flex-row">
                   <a href="tel:5852167758" className="btn-gold flex-1 justify-center text-[0.625rem]">
                     Call Fort Lauderdale
                   </a>
-                  <a href="mailto:holybulausa@gmail.com" className="btn-outline-gold flex-1 justify-center text-[0.625rem]">
+                  <a href="mailto:info@ascensionlounge.com" className="btn-outline-gold flex-1 justify-center text-[0.625rem]">
                     Email Us
                   </a>
                 </div>
@@ -113,12 +113,12 @@ export default function ContactPage() {
                 <p className="mb-2 text-[0.6rem] uppercase tracking-[0.18em] text-white/25">Phone</p>
                 <p className="mb-5 text-sm text-white/60 ">(954) 541-7937</p>
                 <p className="mb-2 text-[0.6rem] uppercase tracking-[0.18em] text-white/25">Email</p>
-                <p className="mb-8 text-sm text-white/60 ">holybulausa@gmail.com</p>
+                <p className="mb-8 text-sm text-white/60 ">info@ascensionlounge.com</p>
                 <div className="flex flex-col gap-2 sm:flex-row">
                   <a href="tel:9545417937" className="btn-gold flex-1 justify-center text-[0.625rem]">
                     Call Hollywood
                   </a>
-                  <a href="mailto:holybulausa@gmail.com" className="btn-outline-gold flex-1 justify-center text-[0.625rem]">
+                  <a href="mailto:info@ascensionlounge.com" className="btn-outline-gold flex-1 justify-center text-[0.625rem]">
                     Email Us
                   </a>
                 </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                 Want to host an event, brand night, meetup, tournament, or private gathering at Ascension?
                 Reach out and our team will help you get connected.
               </p>
-              <a href="mailto:holybulausa@gmail.com" className="btn-gold text-[0.625rem]">
+              <a href="mailto:info@ascensionlounge.com" className="btn-gold text-[0.625rem]">
                 Email Us
               </a>
             </div>

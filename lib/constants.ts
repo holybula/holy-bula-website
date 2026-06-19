@@ -8,9 +8,9 @@ export const BRAND = {
 
   heroSub:       "Ascension is where South Florida's driven crowd works, connects, and builds — over the best kava, kratom teas, and mocktails in the city.",
   industry:      'Kava Bar & Social Club',
-  instagram:     '@holybulausa',
-  instagramUrl:  'https://www.instagram.com/holybulausa',
-  email:         'holybulausa@gmail.com',
+  instagram:     '@ascensionloungeusa',
+  instagramUrl:  'https://www.instagram.com/ascensionloungeusa',
+  email:         'info@ascensionlounge.com',
 } as const
 
 // ─── Navigation ──────────────────────────────────────────────
@@ -65,7 +65,7 @@ export const COPY = {
 
   eventsEyebrow:     'Events This Week',
   eventsTitle:       'Something Every Night.',
-  eventsNote:        'Schedules may vary. Follow @holybulausa for updates.',
+  eventsNote:        'Schedules may vary. Follow @ascensionloungeusa for updates.',
 
   menuEyebrow:       'What We Pour',
   menuTitle:         'Premium drinks. Zero alcohol.',
@@ -90,7 +90,7 @@ export const REWARDS_MEMBER_URL =
 
 // ─── Social links ─────────────────────────────────────────────
 export const SOCIAL = [
-  { label: 'Instagram', href: 'https://www.instagram.com/holybulausa', icon: 'instagram' },
+  { label: 'Instagram', href: 'https://www.instagram.com/ascensionloungeusa', icon: 'instagram' },
 ] as const
 
 // ─── Gold gradient text style (inline) ───────────────────────

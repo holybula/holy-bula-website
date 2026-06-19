@@ -21,11 +21,11 @@ const structuredData = {
   name:          'Ascension',
   description:   "Premium alcohol-free social club. Fort Lauderdale & Hollywood, FL.",
   url:           'https://holybula.com',
-  email:         'holybulausa@gmail.com',
+  email:         'info@ascensionlounge.com',
   servesCuisine: ['Kava', 'Kratom Tea', 'Mocktails', 'Matcha', 'Coffee', 'Protein Shakes'],
   openingHours:  ['Mo-Th 08:00-02:00', 'Fr 08:00-03:00', 'Sa 10:00-03:00', 'Su 10:00-02:00'],
   priceRange:    '$$',
-  sameAs: ['https://www.instagram.com/holybulausa'],
+  sameAs: ['https://www.instagram.com/ascensionloungeusa'],
   location: [
     {
       '@type':   'Place',

@@ -145,7 +145,7 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
 
         <AnimatedReveal delay={pageMode ? 150 : 200}>
           <p className="text-[0.6rem] text-white/25 italic mt-5">
-            {COPY.eventsNote.replace('@holybulausa', '')}
+            {COPY.eventsNote.replace('@ascensionloungeusa', '')}
             <a
               href={BRAND.instagramUrl}
               target="_blank"
