@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Montserrat, Cinzel } from 'next/font/google'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import { isMaintenanceMode } from '@/lib/maintenance'
 import '../styles/globals.css'
 
 const montserrat = Montserrat({
@@ -86,15 +87,23 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const maintenance = isMaintenanceMode()
+
   return (
     <html
       lang="en"
       className={`${montserrat.variable} ${cinzel.variable}`}
     >
       <body className="bg-hb-black font-medium text-white antialiased">
-        <Navbar />
-        {children}
-        <Footer />
+        {maintenance ? (
+          children
+        ) : (
+          <>
+            <Navbar />
+            {children}
+            <Footer />
+          </>
+        )}
       </body>
     </html>
   )
