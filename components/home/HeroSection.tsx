@@ -12,7 +12,7 @@ export default function HeroSection() {
             Fort Lauderdale, Florida
           </p>
           <h1 id="hero-heading" className="lounge-hero-heading">
-            Elevate<br />your <em>circle.</em>
+            Elevate{' '}<br />your <em>circle.</em>
           </h1>
           <p className="lounge-hero-description">
             Fort Lauderdale’s alcohol-free lounge for kava, kratom teas, mocktails,
