@@ -1,48 +1,54 @@
+import { FORT_LAUDERDALE } from './locations'
+
 export interface FaqItem {
-  id:       string
+  id: string
   question: string
-  answer:   string
+  answer: string
+  link?: { href: string; label: string }
 }
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    id:       'what-is-kava',
+    id: 'what-is-kava',
     question: 'What is kava?',
-    answer:   'Kava is a traditional South Pacific root beverage known for helping people relax, unwind, and socialize without alcohol.',
+    answer: 'Kava is a traditional South Pacific drink made from the root of the kava plant. We serve it by the shell.',
   },
   {
-    id:       'what-is-kratom',
+    id: 'what-is-kratom',
     question: 'What is kratom?',
-    answer:   'Kratom is a botanical beverage many guests enjoy for sharp focus, euphoric mood lift, clean energy, and productivity.',
+    answer: 'Kratom is a botanical from a Southeast Asian tree. We serve kratom teas at the lounge.',
   },
   {
-    id:       'need-kava',
+    id: 'need-kava',
     question: 'Do I need to drink kava to come?',
-    answer:   'No. Ascension also serves coffee, teas, mocktails, protein drinks, functional beverages, and more.',
+    answer: 'No. We also serve coffee, teas, mocktails, protein drinks, and other alcohol-free options.',
+    link: { href: '/menu', label: 'Explore the menu' },
   },
   {
-    id:       'work-study',
+    id: 'work-study',
     question: 'Can I work or study at Ascension?',
-    answer:   'Yes. During the day, Ascension is built for entrepreneurs, students, remote workers, creators, and professionals.',
+    answer: 'Yes. During the day, the lounge welcomes students, remote workers, and anyone looking for a place to focus.',
   },
   {
-    id:       'at-night',
+    id: 'at-night',
     question: 'What happens at night?',
-    answer:   'At night, Ascension becomes a social hub with events, games, networking, and community.',
+    answer: 'Stop by for a drink with friends, play pool, or join one of our weekly events.',
   },
   {
-    id:       'alcohol',
+    id: 'alcohol',
     question: 'Do you serve alcohol?',
-    answer:   'No. Ascension is an alcohol-free social experience.',
+    answer: 'No. Ascension is an alcohol-free lounge.',
   },
   {
-    id:       'events',
+    id: 'events',
     question: 'Do you host events?',
-    answer:   'Yes. Trivia, poker, ladies night, bingo, pool tournaments, movie nights, and social events.',
+    answer: 'Yes. We host weekly games and social events at the Fort Lauderdale lounge.',
+    link: { href: '/events', label: 'View weekly events' },
   },
   {
-    id:       'locations',
+    id: 'locations',
     question: 'Where are you located?',
-    answer:   'Ascension has locations in Fort Lauderdale and Hollywood.',
+    answer: `Find us at ${FORT_LAUDERDALE.address.full}.`,
+    link: { href: '/locations', label: 'Hours and directions' },
   },
 ]

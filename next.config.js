@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
+    formats: ['image/webp'],
   },
-};
+  async redirects() {
+    return [
+      {
+        source: '/locations/fort-lauderdale',
+        destination: '/locations',
+        permanent: true,
+      },
+    ]
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

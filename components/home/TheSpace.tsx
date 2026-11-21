@@ -1,65 +1,35 @@
 import Image from 'next/image'
-import { COPY } from '@/lib/constants'
+import Link from 'next/link'
 import AnimatedReveal from '@/components/shared/AnimatedReveal'
 
-// Photos mapped to actual project assets
 const PHOTOS = [
-  {
-    src: '/images/interior/holybula-art-1.PNG',
-    alt:   'Ascension — packed social night with purple lighting and full bar',
-    grid:  'col-span-1 md:col-span-2 md:row-span-2',
-  },
-  {
-    src:   '/images/interior/holybula-art-4.PNG',
-    alt:   'Ascension — vintage portrait art with purple ambient lighting',
-    grid:  'col-span-1',
-  },
-  {
-    src: '/images/interior/holybula-art-3.PNG',
-    alt:   'Ascension — pool table in dark moody interior',
-    grid:  'col-span-1',
-  },
-  {
-    src: '/images/interior/holybula-art-2.PNG',
-    alt:   'Ascension — intimate social seating and art wall',
-    grid:  'col-span-1 md:col-span-2',
-  },
+  { file: 'holybula-art-1.PNG', alt: 'Amber-lit artwork above lounge seating' },
+  { file: 'holybula-art-4.PNG', alt: 'The pool table under a black-and-white portrait' },
+  { file: 'holybula-art-2.PNG', alt: 'Lounge seating beneath a framed black-and-white scene' },
+  { file: 'holybula-art-3.PNG', alt: 'A framed portrait on the wall under violet lighting' },
 ] as const
 
 export default function TheSpace() {
   return (
-    <section
-      id="the-space"
-      className="bg-[#0a0a0a] border-t border-white/[0.05]"
-      aria-label="The Space"
-    >
-      {/* Eyebrow only — no headline copy */}
-      <div className="container-hb pt-section pb-6">
-        <AnimatedReveal>
-          <p className="eyebrow">{COPY.spaceEyebrow}</p>
-        </AnimatedReveal>
-      </div>
-
-      {/* Photo mosaic — photos are the content */}
-      <div className="container-hb pb-section">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 auto-rows-[260px] md:auto-rows-[240px]">
-          {PHOTOS.map((photo, i) => (
-            <AnimatedReveal key={photo.src} delay={i * 60} className={photo.grid}>
-              <div className="relative w-full h-full overflow-hidden bg-[#0d0d0d] group">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                {/* Subtle dark vignette */}
-                <div
-                  className="absolute inset-0 opacity-30"
-                  style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)' }}
-                  aria-hidden="true"
-                />
-              </div>
+    <section id="the-space" className="border-y border-white/10 bg-hb-black-2 section-padding" aria-labelledby="space-heading">
+      <div className="container-hb">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-5 md:mb-11">
+          <div>
+            <p className="eyebrow">Inside Ascension</p>
+            <h2 id="space-heading" className="text-display-lg">The Lounge.</h2>
+          </div>
+          <Link href="/about" className="btn-outline">About Ascension <span aria-hidden="true" className="link-arrow" /></Link>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+          {PHOTOS.map(({ file, alt }, index) => (
+            <AnimatedReveal key={file} delay={index * 65} className="group relative aspect-[3/4] overflow-hidden border border-white/10">
+              <Image
+                src={'/images/interior/' + file}
+                alt={alt}
+                fill
+                className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-105"
+                sizes="(max-width: 1023px) 48vw, 24vw"
+              />
             </AnimatedReveal>
           ))}
         </div>
