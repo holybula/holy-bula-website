@@ -35,7 +35,8 @@ export default function EventsPage() {
               alt="Pool table beneath framed artwork inside Ascension"
               className="object-cover object-[center_62%]"
               fill
-              sizes="(min-width: 1024px) 45vw, 90vw"
+              priority
+              sizes="(min-width: 768px) 45vw, 90vw"
             />
           </div>
         </div>
