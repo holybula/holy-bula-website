@@ -1,94 +1,60 @@
 import type { Metadata } from 'next'
-import HeroSection    from '@/components/home/HeroSection'
-import HappyHourBar   from '@/components/home/HappyHourBar'
-import WhosHere       from '@/components/home/WhosHere'
 import EventsThisWeek from '@/components/home/EventsThisWeek'
-import WhatWePour     from '@/components/home/WhatWePour'
-import TheSpace       from '@/components/home/TheSpace'
+import HappyHourBar from '@/components/home/HappyHourBar'
+import HeroSection from '@/components/home/HeroSection'
+import LocationHours from '@/components/home/LocationHours'
 import ReviewsSection from '@/components/home/ReviewsSection'
-import RewardsTeaser  from '@/components/home/RewardsTeaser'
-import LocationHours  from '@/components/home/LocationHours'
+import RewardsTeaser from '@/components/home/RewardsTeaser'
+import TheSpace from '@/components/home/TheSpace'
+import WhatWePour from '@/components/home/WhatWePour'
+import WhosHere from '@/components/home/WhosHere'
+import { BRAND } from '@/lib/constants'
+import { BUSINESS_HOURS_STRUCTURED_DATA, FORT_LAUDERDALE } from '@/lib/locations'
 
 export const metadata: Metadata = {
-  title:       'Ascension | Elevate Your Circle — Fort Lauderdale & Hollywood, FL',
-  description: "Ascension is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Kava, kratom teas, mocktails, matcha, coffee. Events every night. Business by day. Social by night.",
-  alternates:  { canonical: 'https://ascensionlounge.com' },
+  title: { absolute: 'Ascension Kava Bar & Lounge | Fort Lauderdale' },
+  description: 'Alcohol-free nightlife in Fort Lauderdale. Explore the kava bar menu, weekly events, happy hour and directions to Ascension on Federal Highway.',
+  alternates: { canonical: '/' },
 }
 
-const structuredData = {
-  '@context':    'https://schema.org',
-  '@type':       'BarOrPub',
-  name:          'Ascension',
-  description:   "Premium alcohol-free social club. Fort Lauderdale & Hollywood, FL.",
-  url:           'https://ascensionlounge.com',
-  email:         'info@ascensionlounge.com',
+const { address, googleMapsUrl } = FORT_LAUDERDALE
+const venue = {
+  '@context': 'https://schema.org',
+  '@type': 'BarOrPub',
+  name: BRAND.nameFull,
+  description: 'Alcohol-free kava bar and lounge in Fort Lauderdale.',
+  url: 'https://www.ascensionlounge.com/',
+  email: BRAND.email,
+  sameAs: [BRAND.instagramUrl],
+  hasMap: googleMapsUrl,
+  hasMenu: 'https://www.ascensionlounge.com/menu',
   servesCuisine: ['Kava', 'Kratom Tea', 'Mocktails', 'Matcha', 'Coffee', 'Protein Shakes'],
-  openingHours:  ['Mo-Th 08:00-02:00', 'Fr 08:00-03:00', 'Sa 10:00-03:00', 'Su 10:00-02:00'],
-  priceRange:    '$$',
-  sameAs: ['https://www.instagram.com/ascensionloungeusa'],
-  location: [
-    {
-      '@type':   'Place',
-      name:      'Ascension Fort Lauderdale',
-      address: {
-        '@type':         'PostalAddress',
-        streetAddress:   '825 N Federal Hwy',
-        addressLocality: 'Fort Lauderdale',
-        addressRegion:   'FL',
-        postalCode:      '33304',
-        addressCountry:  'US',
-      },
-    },
-    {
-      '@type':   'Place',
-      name:      'Ascension Hollywood / Cooper City',
-      address: {
-        '@type':         'PostalAddress',
-        streetAddress:   '9630 Stirling Rd Ste 104',
-        addressLocality: 'Hollywood',
-        addressRegion:   'FL',
-        postalCode:      '33024',
-        addressCountry:  'US',
-      },
-    },
-  ],
+  openingHours: [BUSINESS_HOURS_STRUCTURED_DATA],
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: address.street,
+    addressLocality: address.city,
+    addressRegion: address.state,
+    postalCode: address.zip,
+    addressCountry: 'US',
+  },
 }
 
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      <main id="main-content">
-        {/* 2. Hero */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(venue) }} />
+      <main id="main-content" tabIndex={-1}>
         <HeroSection />
-
-        {/* 3. Happy Hour Bar */}
         <HappyHourBar />
-
-        {/* 4. Who's Here */}
-        <WhosHere />
-
-        {/* 5. Events This Week */}
         <EventsThisWeek />
-
-        {/* 6. What We Pour */}
         <WhatWePour />
-
-        {/* 7. The Space */}
         <TheSpace />
-
-        {/* 8. Reviews */}
-        <ReviewsSection />
-
-        {/* 9. Rewards */}
-        <RewardsTeaser />
-
-        {/* 10. Locations + Hours */}
         <LocationHours />
+        <WhosHere />
+        <ReviewsSection />
+        <RewardsTeaser />
       </main>
     </>
   )

@@ -1,90 +1,47 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqAccordion from '@/components/faq/FaqAccordion'
-import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title:       'FAQ',
-  description: 'Frequently asked questions about Ascension — kava, kratom, alcohol-free social club, events, and locations in Fort Lauderdale and Hollywood, FL.',
-  alternates:  { canonical: 'https://ascensionlounge.com/faq' },
+  title: 'FAQ',
+  description: 'Find answers about kava, kratom, the menu, and visiting Ascension Kava Bar & Lounge in Fort Lauderdale.',
+  alternates: { canonical: 'https://www.ascensionlounge.com/faq' },
 }
 
 export default function FaqPage() {
   return (
-    <main id="main-content" className="bg-[#080808] min-h-screen">
+    <main id="main-content" tabIndex={-1}>
       <section
-        className="relative pt-28 md:pt-36 pb-12 md:pb-16 overflow-hidden border-b border-white/[0.05]"
+        className="border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
         aria-labelledby="faq-page-heading"
       >
-        <div
-          className="absolute top-0 right-0 w-2/3 h-full pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at top right, rgba(147,51,234,0.14) 0%, transparent 60%)' }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-1/2 h-1/2 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at bottom left, rgba(212,175,55,0.06) 0%, transparent 65%)' }}
-          aria-hidden="true"
-        />
-
-        <div className="container-hb relative z-10">
-          <p className="eyebrow">FAQs</p>
-          <div className="gold-line-left" />
-          <h1
-            id="faq-page-heading"
-            className="text-[clamp(2rem,6vw,3.75rem)] font-extrabold text-white leading-[1.05] tracking-tight max-w-2xl"
-          >
-            Questions{' '}
-            <span style={GOLD_GRADIENT_TEXT}>Answered.</span>
-          </h1>
-          <p className="text-white/72 text-base md:text-lg mt-4 max-w-lg leading-relaxed">
-            Everything you need to know about kava, kratom, and the Ascension experience.
+        <div className="container-hb">
+          <h1 id="faq-page-heading" className="text-display-lg font-normal">Frequently asked questions</h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-hb-off-white/80 md:text-lg">
+            Get to know our drinks and what to expect on your first visit to Ascension.
           </p>
         </div>
       </section>
 
-      <FaqAccordion />
+      <div className="container-hb section-padding grid items-start gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:gap-16">
+        <FaqAccordion />
 
-      <section
-        className="relative bg-[#0d0d0d] border-t border-white/[0.05] overflow-hidden"
-        aria-labelledby="faq-cta-heading"
-      >
-        <div
-          className="absolute top-1/2 right-0 -translate-y-1/2 pointer-events-none w-1/2 h-full"
-          style={{ background: 'radial-gradient(ellipse at right center, rgba(147,51,234,0.09) 0%, transparent 65%)' }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-1/2 h-1/2 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at bottom left, rgba(212,175,55,0.06) 0%, transparent 65%)' }}
-          aria-hidden="true"
-        />
-
-        <div className="container-hb section-padding relative z-10">
-          <div className="max-w-xl mx-auto text-center">
-            <p className="eyebrow">Still Curious?</p>
-            <div className="gold-line mx-auto mb-6" style={{ maxWidth: '120px' }} />
-            <h2
-              id="faq-cta-heading"
-              className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-white leading-tight mb-5"
-            >
-              Come see for{' '}
-              <span style={GOLD_GRADIENT_TEXT}>yourself.</span>
-            </h2>
-            <p className="text-base text-white/72 leading-relaxed mb-8 max-w-sm mx-auto">
-              Fort Lauderdale and Hollywood. Business by day. Social by night.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/locations" className="btn-gold">
-                Visit Ascension
-              </Link>
-              <Link href="/about" className="btn-outline">
-                About Us
+        <aside className="border border-hb-gold/25 bg-hb-black-2 p-6 sm:p-8" aria-labelledby="faq-contact-heading">
+          <h2 id="faq-contact-heading" className="text-display-sm font-normal">Still have a question?</h2>
+          <p className="mt-3 text-base leading-relaxed text-hb-off-white/80">
+            Get in touch or come see us in Fort Lauderdale.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/contact" className="btn-gold">Contact us</Link>
+            <Link href="/locations" className="btn-outline">Plan your visit</Link>
+            <div className="basis-full">
+              <Link href="/about" className="text-sm text-hb-gold underline underline-offset-4 hover:text-hb-off-white">
+                About Ascension
               </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </aside>
+      </div>
     </main>
   )
 }

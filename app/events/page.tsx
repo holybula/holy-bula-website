@@ -1,48 +1,58 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import EventsThisWeek from '@/components/home/EventsThisWeek'
-import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
+import HappyHourBar from '@/components/home/HappyHourBar'
+import { FORT_LAUDERDALE } from '@/lib/locations'
 
 export const metadata: Metadata = {
-  title:       'Events',
-  description: 'Weekly events at Ascension Fort Lauderdale and Hollywood. Trivia, poker, ladies night, bingo, pool tournaments, and more — something every night.',
-  alternates:  { canonical: 'https://ascensionlounge.com/events' },
+  title: 'Events',
+  description: 'Weekly events and happy hour at Ascension in Fort Lauderdale. See the schedule for pool, FIFA, Friday Night Party, Football & Free Pizza, and more.',
+  alternates: { canonical: '/events' },
 }
 
 export default function EventsPage() {
   return (
-    <main id="main-content" className="bg-[#080808] min-h-screen">
-      <section
-        className="relative pt-28 md:pt-36 pb-0 overflow-hidden border-b border-white/[0.05]"
-        aria-labelledby="events-page-heading"
-      >
-        <div
-          className="absolute top-0 right-0 w-2/3 h-full pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at top right, rgba(147,51,234,0.14) 0%, transparent 60%)' }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-1/2 h-1/2 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at bottom left, rgba(212,175,55,0.06) 0%, transparent 65%)' }}
-          aria-hidden="true"
-        />
-
-        <div className="container-hb relative z-10 pb-8 md:pb-10">
-          <p className="eyebrow">Events This Week</p>
-          <div className="gold-line-left" />
-          <h1
-            id="events-page-heading"
-            className="text-[clamp(2rem,6vw,3.75rem)] font-extrabold text-white leading-[1.05] tracking-tight max-w-2xl"
-          >
-            Weekly{' '}
-            <span style={GOLD_GRADIENT_TEXT}>Events</span>
-          </h1>
-          <p className="text-white/72 text-base md:text-lg mt-4 max-w-lg leading-relaxed">
-            Seven nights a week. Pick your circle.
-          </p>
+    <main id="main-content" tabIndex={-1} className="min-h-screen">
+      <section aria-labelledby="events-page-heading" className="container-hb pt-28 md:pt-36">
+        <div className="grid items-center gap-7 border-b border-white/10 pb-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:gap-12 md:pb-14">
+          <div>
+            <p className="eyebrow">Every week in Fort Lauderdale</p>
+            <h1 id="events-page-heading" className="text-display-xl font-normal">
+              Weekly events
+            </h1>
+            <p className="mt-4 text-base leading-relaxed text-white/75">
+              {FORT_LAUDERDALE.address.full}
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="#weekly-schedule" className="btn-gold">Weekly schedule</Link>
+              <Link href="#happy-hour" className="btn-outline">Happy hour</Link>
+            </div>
+          </div>
+          <div className="relative aspect-[5/3] overflow-hidden border border-white/10">
+            <Image
+              src="/images/interior/holybula-art-4.PNG"
+              alt="Pool table beneath framed artwork inside Ascension"
+              className="object-cover object-[center_62%]"
+              fill
+              sizes="(min-width: 1024px) 45vw, 90vw"
+            />
+          </div>
         </div>
       </section>
 
-      <EventsThisWeek pageMode />
+      <div className="py-10 md:py-14">
+        <EventsThisWeek pageMode />
+      </div>
+
+      <HappyHourBar pageMode />
+
+      <div className="container-hb flex flex-wrap items-center gap-x-6 gap-y-3 py-8">
+        <a href={FORT_LAUDERDALE.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn-gold">
+          Get directions <span aria-hidden="true" className="link-arrow" />
+        </a>
+        <Link href="/locations" className="btn-outline">Business hours</Link>
+      </div>
     </main>
   )
 }

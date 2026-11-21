@@ -1,44 +1,42 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import AboutContent from '@/components/about/AboutContent'
-import { GOLD_GRADIENT_TEXT } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title:       'About',
-  description: 'Ascension is a premium alcohol-free social club in Fort Lauderdale and Hollywood, FL. Business by day. Social by night. Kava, kratom, mocktails, and community.',
-  alternates:  { canonical: 'https://ascensionlounge.com/about' },
+  title: 'About',
+  description: 'Get to know Ascension Kava Bar & Lounge, an alcohol-free lounge in Fort Lauderdale for specialty drinks, a daytime work session, and a night out.',
+  alternates: { canonical: 'https://www.ascensionlounge.com/about' },
 }
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="bg-[#080808] min-h-screen">
+    <main id="main-content" tabIndex={-1}>
       <section
-        className="relative pt-28 md:pt-36 pb-12 md:pb-16 overflow-hidden border-b border-white/[0.05]"
+        className="border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
         aria-labelledby="about-page-heading"
       >
-        <div
-          className="absolute top-0 right-0 w-2/3 h-full pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at top right, rgba(147,51,234,0.14) 0%, transparent 60%)' }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-1/2 h-1/2 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at bottom left, rgba(212,175,55,0.06) 0%, transparent 65%)' }}
-          aria-hidden="true"
-        />
-
-        <div className="container-hb relative z-10">
-          <p className="eyebrow">About Ascension</p>
-          <div className="gold-line-left" />
-          <h1
-            id="about-page-heading"
-            className="text-[clamp(2rem,6vw,3.75rem)] font-extrabold text-white leading-[1.05] tracking-tight max-w-3xl"
-          >
-            Business By Day.{' '}
-            <span style={GOLD_GRADIENT_TEXT}>Social By Night.</span>
-          </h1>
-          <p className="text-white/72 text-base md:text-lg mt-4 max-w-2xl leading-relaxed">
-            Ascension is where entrepreneurs, students, professionals, creators, and friends come together to work, connect, compete, and unwind.
-          </p>
+        <div className="container-hb grid items-center gap-9 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
+          <div>
+            <p className="eyebrow">About Ascension</p>
+            <h1 id="about-page-heading" className="font-normal leading-[1.02] text-display-lg">
+              Business by day. <span className="block text-hb-gold">Social by night.</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-hb-off-white/80 md:text-lg">
+              Ascension is where entrepreneurs, students, professionals, creators, and friends come together to work, connect, compete, and unwind.
+            </p>
+            <Link href="/locations" className="btn-gold mt-8">Plan your visit</Link>
+          </div>
+          <div className="relative aspect-[5/4] overflow-hidden border border-hb-gold/25 bg-hb-black md:aspect-square lg:aspect-[6/5]">
+            <Image
+              src="/images/interior/holybula-art-1.PNG"
+              alt="A warmly lit painting above the lounge seating at Ascension"
+              fill
+              priority
+              sizes="(min-width: 1280px) 490px, (min-width: 768px) 42vw, 90vw"
+              className="object-cover object-[center_61%]"
+            />
+          </div>
         </div>
       </section>
 

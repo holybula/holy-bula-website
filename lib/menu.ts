@@ -1,22 +1,4 @@
-import type { LocationId } from './constants'
-
-// What We Pour — six categories with real Ascension data
-
-export interface LocationMenu {
-  image: string
-  alt:   string
-}
-
-export const LOCATION_MENUS: Record<LocationId, LocationMenu> = {
-  'fort-lauderdale': {
-    image: '/images/menu/fort-lauderdale-menu.PNG',
-    alt:   'Ascension Fort Lauderdale drink menu — kava, kratom teas, coffee, matcha, mocktails, and more',
-  },
-  'hollywood': {
-    image: '/images/menu/hollywood-menu.PNG',
-    alt:   'Ascension Hollywood drink menu — kava, kratom teas, coffee, matcha, mocktails, and more',
-  },
-}
+export const MENU_IMAGE = '/images/menu/fort-lauderdale-menu.PNG'
 
 export interface PourCategory {
   id:          string

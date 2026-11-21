@@ -21,12 +21,12 @@ export default function AnimatedReveal({
 
   useEffect(() => {
     const el = ref.current
-    if (!el) return
+    if (!el || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.transitionDelay = `${delay}ms`
+          el.style.animationDelay = `${delay}ms`
           el.classList.add('visible')
           if (once) observer.disconnect()
         } else if (!once) {

@@ -16,36 +16,39 @@ export default function MenuItemCard({ item, category }: MenuItemCardProps) {
   ]
 
   return (
-    <article className="flex flex-col border border-white/[0.08] bg-[#0d0d0d] p-5 md:p-6 transition-colors duration-200 hover:border-white/[0.14] hover:bg-[#111]">
-      <h3 className="text-base md:text-lg font-extrabold text-white leading-tight mb-2">
-        {item.name}
-      </h3>
+    <article className="flex flex-col gap-4 border border-white/10 bg-hb-black-2 px-5 py-5 sm:px-6">
+      <div className="flex items-baseline justify-between gap-4">
+        <h3 className="font-display text-2xl font-normal leading-tight text-[#f5ecdc]">
+          {item.name}
+        </h3>
+        {!item.sizes?.length && item.price != null && (
+          <p className="text-sm font-medium tabular-nums text-hb-gold">{formatPrice(item.price)}</p>
+        )}
+      </div>
 
       {item.description && (
-        <p className="text-sm text-white/72 leading-relaxed mb-3">{item.description}</p>
+        <p className="text-sm leading-relaxed text-[#d8ccc0]">{item.description}</p>
       )}
 
-      {item.sizes?.length ? (
-        <ul className="flex flex-col gap-1.5 mb-3">
+      {item.sizes && item.sizes.length > 0 && (
+        <ul className="flex flex-col gap-2 border-t border-white/10 pt-3">
           {item.sizes.map(size => (
-            <li key={size.label} className="flex items-baseline justify-between gap-3 text-sm">
-              <span className="text-white/65">{size.label}</span>
-              <span className="text-hb-gold font-semibold">{formatPrice(size.price)}</span>
+            <li key={size.label} className="flex justify-between gap-3 text-sm">
+              <span className="text-[#d8ccc0]">{size.label}</span>
+              <span className="font-medium tabular-nums text-hb-gold">{formatPrice(size.price)}</span>
             </li>
           ))}
         </ul>
-      ) : item.price != null ? (
-        <p className="text-sm font-semibold text-hb-gold mb-3">{formatPrice(item.price)}</p>
-      ) : null}
+      )}
 
       {allAddOns.length > 0 && (
-        <div className="mb-3">
-          <p className="text-[0.6rem] tracking-[0.15em] uppercase text-white/45 mb-2">Add-ons</p>
-          <ul className="flex flex-col gap-1">
+        <div className="border-t border-white/10 pt-3">
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.12em] text-hb-gold">Add-ons</p>
+          <ul className="flex flex-col gap-2">
             {allAddOns.map(addOn => (
-              <li key={addOn.id} className="text-sm text-white/65">
-                {addOn.name}
-                <span className="text-white/45 ml-1">+{formatPrice(addOn.price)}</span>
+              <li key={addOn.id} className="flex justify-between gap-3 text-sm">
+                <span className="text-[#d8ccc0]">{addOn.name}</span>
+                <span className="font-medium tabular-nums text-hb-gold">+{formatPrice(addOn.price)}</span>
               </li>
             ))}
           </ul>
@@ -53,7 +56,7 @@ export default function MenuItemCard({ item, category }: MenuItemCardProps) {
       )}
 
       {item.note && (
-        <p className="text-sm text-white/55 italic">{item.note}</p>
+        <p className="text-sm italic text-[#d8ccc0]">{item.note}</p>
       )}
     </article>
   )

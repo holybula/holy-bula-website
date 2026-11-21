@@ -1,117 +1,93 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { NAV_LINKS } from '@/lib/constants'
-import ComingSoonOrderButton from '@/components/shared/ComingSoonOrderButton'
-
-function Hamburger({ open, onClick, className = '' }: { open: boolean; onClick: () => void; className?: string }) {
-  return (
-    <button
-      onClick={onClick}
-      aria-label={open ? 'Close menu' : 'Open menu'}
-      aria-expanded={open}
-      className={`lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] relative z-50 ${className}`}
-    >
-      <span className={`block w-6 h-[1.5px] bg-white transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-      <span className={`block h-[1.5px] bg-white transition-all duration-300 ${open ? 'w-0 opacity-0' : 'w-5'}`} />
-      <span className={`block w-6 h-[1.5px] bg-white transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
-    </button>
-  )
-}
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { BRAND, NAV_LINKS, ORDERING_COMING_SOON } from '@/lib/constants'
 
 export default function Navbar() {
-  const [scrolled,   setScrolled]   = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+  const [open, setOpen] = useState(false)
+  const toggle = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => setOpen(false), [pathname])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    if (!open) return
 
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [mobileOpen])
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpen(false)
+        toggle.current?.focus()
+      }
+    }
 
-  const close = useCallback(() => setMobileOpen(false), [])
+    const desktop = window.matchMedia('(min-width: 1024px)')
+    const closeOnDesktop = () => setOpen(false)
+    document.addEventListener('keydown', closeOnEscape)
+    desktop.addEventListener('change', closeOnDesktop)
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape)
+      desktop.removeEventListener('change', closeOnDesktop)
+    }
+  }, [open])
 
   return (
-    <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          scrolled
-            ? 'bg-[#080808]/96 backdrop-blur-md border-b border-white/[0.06] py-3'
-            : 'bg-transparent py-5'
-        }`}
-      >
-        <nav className="container-hb flex items-center" aria-label="Main navigation">
-
-          <Link href="/" aria-label="Ascension — Home" className="flex items-center gap-3 group flex-shrink-0">
-            <Image
-              src="/ascension-logo.svg"
-              alt="Ascension logo"
-              width={36}
-              height={36}
-              className="w-9 h-9 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
-              priority
-            />
-            <span className="font-logo text-[1.05rem] text-white tracking-wide leading-none">
-              Ascension
-            </span>
-          </Link>
-
-          <ul className="hidden lg:flex flex-1 items-center justify-center gap-8">
-            {NAV_LINKS.map(link => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-[0.6875rem] tracking-[0.18em] uppercase font-medium text-white/65 hover:text-hb-gold transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <div className="hidden lg:block flex-shrink-0 w-[8.25rem]" aria-hidden="true" />
-
-          <Hamburger open={mobileOpen} onClick={() => setMobileOpen(p => !p)} className="lg:ml-0 ml-auto" />
-        </nav>
-      </header>
-
-      <div
-        className={`fixed inset-0 z-[90] bg-[#080808] flex flex-col lg:hidden transition-all duration-300 ${
-          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        aria-hidden={!mobileOpen}
-      >
-        <div className="h-20 flex-shrink-0" aria-hidden="true" />
-
-        <div className="gold-line mx-5 mb-8" />
-
-        <ul className="flex flex-col px-6 gap-1 flex-1">
-          {NAV_LINKS.map((link, i) => (
+    <header className="site-header">
+      <nav className="container-hb site-nav" aria-label="Main navigation">
+        <Link href="/" onClick={() => setOpen(false)} className="wordmark" aria-label="Ascension home">
+          <Image src="/ascension-mark.svg" alt="" width={28} height={36} priority />
+          <span>
+            <span className="wordmark-name">Ascension</span>
+            <span className="wordmark-caption">Kava Bar &amp; Lounge</span>
+          </span>
+        </Link>
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
+          {NAV_LINKS.filter(link => link.href !== '/locations').map(link => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={close}
-                className="block py-4 text-[1.75rem] font-extrabold text-white/80 hover:text-hb-gold transition-colors duration-200"
-                style={{ transitionDelay: `${i * 40}ms` }}
-              >
+              <Link href={link.href} aria-current={pathname === link.href ? 'page' : undefined} className="nav-link">
                 {link.label}
               </Link>
             </li>
           ))}
         </ul>
-
-        <div className="px-6 pb-12 pt-8 border-t border-white/[0.06]">
-          <p className="eyebrow mb-4">Fort Lauderdale · Hollywood</p>
-          <ComingSoonOrderButton fullWidth showMessage />
+        <Link href="/locations" className="btn-outline-gold site-nav-visit">
+          Visit Us <span aria-hidden="true" className="link-arrow" />
+        </Link>
+        <button
+          ref={toggle}
+          type="button"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          className="mobile-toggle lg:hidden"
+          onClick={() => setOpen(value => !value)}
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            {open ? <path d="m5 5 14 14M19 5 5 19" /> : <path d="M3 8h18M3 16h18" />}
+          </svg>
+        </button>
+        <div id="mobile-navigation" className="mobile-navigation lg:hidden" hidden={!open}>
+          <div className="container-hb py-5">
+            <ul>
+              {NAV_LINKS.map(link => (
+                <li key={link.href} className="border-b border-white/10">
+                  <Link href={link.href} onClick={() => setOpen(false)}
+                    aria-current={pathname === link.href ? 'page' : undefined}
+                    className="block py-3 text-3xl font-display hover:text-hb-gold">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <a href={BRAND.instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm text-hb-gold">
+              {BRAND.instagram}
+            </a>
+            <p className="mt-2 text-xs text-white/65">{ORDERING_COMING_SOON.label}</p>
+          </div>
         </div>
-      </div>
-    </>
+      </nav>
+    </header>
   )
 }
