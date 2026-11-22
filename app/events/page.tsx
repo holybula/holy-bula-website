@@ -29,14 +29,14 @@ export default function EventsPage() {
               <Link href="#happy-hour" className="btn-outline">Happy hour</Link>
             </div>
           </div>
-          <div className="relative aspect-[5/3] overflow-hidden border border-white/10">
+          <div className="relative aspect-[4/3] w-full max-w-[22.5rem] overflow-hidden border border-hb-gold/35 md:justify-self-end">
             <Image
-              src="/images/interior/holybula-art-4.PNG"
-              alt="Pool table beneath framed artwork inside Ascension"
-              className="object-cover object-[center_62%]"
+              src="/images/lounge/pool-night.jpg"
+              alt="A player lining up a shot at an Ascension pool tournament in Fort Lauderdale"
+              className="object-cover object-[50%_66%]"
               fill
               priority
-              sizes="(min-width: 768px) 45vw, 90vw"
+              unoptimized
             />
           </div>
         </div>

@@ -17,7 +17,8 @@
 .heroMedia {
   position: absolute;
   z-index: -1;
-  inset: 0;
+  inset: 0 0 0 auto;
+  width: min(100%, 360px);
   overflow: hidden;
 }
 
@@ -25,12 +26,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #100e10f5 15%, #100e10a6 70%, #100e1060), linear-gradient(0deg, #100e10 0%, transparent 58%);
+  background: linear-gradient(90deg, #191219 0%, #191219bb 52%, #100e1080 100%), linear-gradient(0deg, #100e10 0%, transparent 72%);
 }
 
 .heroImage {
   object-fit: cover;
-  object-position: center 55%;
+  object-position: center 52%;
 }
 
 .heroContent {
@@ -277,11 +278,11 @@
   }
 
   .heroMedia {
-    left: 49%;
+    right: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
   }
 
   .heroMedia::after {
-    background: linear-gradient(90deg, #191219 0%, #1912191a 62%), linear-gradient(0deg, #100e10 0%, transparent 62%);
+    background: linear-gradient(90deg, #191219 0%, #19121900 46%), linear-gradient(0deg, #191219 0%, transparent 38%);
   }
 }
 

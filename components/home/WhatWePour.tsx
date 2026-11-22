@@ -29,14 +29,16 @@ export default function WhatWePour() {
               </li>
             ))}
           </ul>
-          <div className="relative aspect-[3/1.65] min-w-0 overflow-hidden border-t border-white/10 md:aspect-auto md:border-l md:border-t-0">
-            <Image
-              src="/images/interior/holybula-art-1.PNG"
-              alt="Lounge seating beneath illuminated artwork at Ascension"
-              fill
-              sizes="(max-width: 767px) 90vw, 35vw"
-              className="object-cover object-[50%_56%]"
-            />
+          <div className="flex items-stretch justify-center border-t border-white/10 bg-hb-black-3 md:border-l md:border-t-0">
+            <div className="relative aspect-[4/3] w-full max-w-[22.5rem] overflow-hidden md:aspect-auto md:min-h-72">
+              <Image
+                src="/images/lounge/drink-pour.jpg"
+                alt="A bright blue drink being poured behind the Ascension bar"
+                fill
+                unoptimized
+                className="object-cover object-[50%_49%]"
+              />
+            </div>
           </div>
         </div>
       </div>
