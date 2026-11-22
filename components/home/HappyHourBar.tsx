@@ -26,31 +26,53 @@ export default function HappyHourBar({ pageMode = false }: { pageMode?: boolean 
       <div className={`container-hb ${pageMode ? '' : 'py-6'}`}>
         <div className={pageMode
           ? 'grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-16'
-          : 'grid items-center gap-4 md:grid-cols-[auto_1fr_auto] md:gap-8'}
+          : 'grid items-center gap-4 md:grid-cols-[1fr_auto] md:gap-8'}
         >
           <div>
             <h2
               id="happy-hour-heading"
               className={pageMode ? 'text-display-lg font-normal' : 'text-[1.65rem] font-normal leading-none sm:text-[1.9rem]'}
             >
-              Happy hour
+              {pageMode ? 'Happy hour' : 'Happy Hours'}
             </h2>
-            <p className="mt-2 text-sm text-hb-gold">All day {HAPPY_HOUR.allDay}</p>
-            {isActive && <p className="mt-2 text-sm text-hb-gold-2">Happening now</p>}
+            {pageMode ? (
+              <p className="mt-2 text-sm text-hb-gold">All day {HAPPY_HOUR.allDay}</p>
+            ) : (
+              <dl className="mt-3 grid gap-1.5 text-sm text-hb-gold">
+                <div className="flex flex-wrap items-baseline gap-x-2">
+                  <dt className="font-semibold">{HAPPY_HOUR.allDay}:</dt>
+                  <dd>All Day</dd>
+                </div>
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <dt className="font-semibold">Every day:</dt>
+                  <dd>
+                    <ul className="flex flex-wrap gap-x-3 gap-y-1">
+                      {HAPPY_HOUR.windows.map(({ start, end }) => (
+                        <li key={start} className="whitespace-nowrap">
+                          {formatHour(start)}–{formatHour(end)}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            )}
+            {isActive && <p className="mt-2 text-sm text-hb-gold">Happening now</p>}
           </div>
 
-          <div className={pageMode ? '' : 'flex flex-wrap items-baseline gap-x-4 gap-y-1'}>
-            <p className={pageMode ? 'text-sm font-medium text-hb-gold' : 'text-sm text-white/70'}>Every day</p>
-            <ul className={`flex flex-wrap items-baseline gap-x-4 gap-y-1 ${pageMode ? 'mt-2 text-base' : 'text-sm'}`}>
-              {HAPPY_HOUR.windows.map(({ start, end }) => (
-                <li key={start} className="whitespace-nowrap text-hb-white">
-                  {formatHour(start)}–{formatHour(end)}
-                </li>
-              ))}
-            </ul>
-
-            {pageMode && <OfferList offers={HAPPY_HOUR.offers} />}
-          </div>
+          {pageMode && (
+            <div>
+              <p className="text-sm font-medium text-hb-gold">Every day</p>
+              <ul className="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-base">
+                {HAPPY_HOUR.windows.map(({ start, end }) => (
+                  <li key={start} className="whitespace-nowrap text-hb-white">
+                    {formatHour(start)}–{formatHour(end)}
+                  </li>
+                ))}
+              </ul>
+              <OfferList offers={HAPPY_HOUR.offers} />
+            </div>
+          )}
 
           {!pageMode && (
             <Link href="/events#happy-hour" className="inline-flex min-h-11 w-fit items-center gap-2 text-sm text-hb-gold underline-offset-4 transition-colors hover:text-hb-gold-2 hover:underline">
