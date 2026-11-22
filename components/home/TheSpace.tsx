@@ -7,25 +7,25 @@ const PHOTOS = [
   {
     src: '/images/lounge/pool-night.jpg',
     alt: 'A pool player lining up a shot at Ascension',
-    frame: 'col-span-2 aspect-[5/4] sm:col-span-1 sm:aspect-[4/5]',
+    frame: 'aspect-[5/4] sm:aspect-[4/5]',
     position: 'object-[50%_62%]',
-    sizes: '(min-width: 1280px) 450px, (min-width: 640px) 36vw, 90vw',
+    sizes: '(min-width: 1280px) 450px, (min-width: 640px) 36vw, calc(100vw - 40px)',
     unoptimized: true,
   },
   {
     src: '/images/lounge/tea-pour.jpg',
     alt: 'Tea being poured into a cup at the Ascension bar',
-    frame: 'aspect-[4/5]',
+    frame: 'aspect-[5/4] sm:aspect-[4/5]',
     position: 'object-[58%_53%]',
-    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, 45vw',
+    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, calc(100vw - 40px)',
     unoptimized: true,
   },
   {
     src: '/images/interior/holybula-art-1.PNG',
     alt: 'Amber-lit artwork above a row of lounge chairs',
-    frame: 'aspect-[4/5]',
+    frame: 'aspect-[5/4] sm:aspect-[4/5]',
     position: 'object-[50%_68%]',
-    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, 45vw',
+    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, calc(100vw - 40px)',
     unoptimized: false,
   },
 ] as const
@@ -46,7 +46,7 @@ export default function TheSpace() {
             </a>
           </div>
         </div>
-        <div className="lounge-photo-grid grid grid-cols-2 items-end gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-4 lg:gap-5">
+        <div className="lounge-photo-grid grid grid-cols-1 items-end gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-4 lg:gap-5">
           {PHOTOS.map(({ src, alt, frame, position, sizes, unoptimized }, index) => (
             <AnimatedReveal key={src} delay={index * 65} className={'group lounge-photo relative overflow-hidden ' + frame}>
               <Image

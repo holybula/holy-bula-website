@@ -294,6 +294,13 @@
 .lounge-home .lounge-photo:nth-child(2) { margin-top: clamp(0.45rem, 3vw, 2.25rem); }
 .lounge-home .lounge-photo:nth-child(3) { margin-bottom: clamp(0.45rem, 3vw, 2.25rem); }
 .lounge-home .lounge-photo img { filter: saturate(1.07); }
+
+@media (max-width: 639px) {
+  .lounge-home .lounge-photo-grid { gap: 0.75rem; }
+  .lounge-home .lounge-photo:nth-child(2),
+  .lounge-home .lounge-photo:nth-child(3) { margin-block: 0; }
+}
+
 .lounge-footer { background: #160e20; border-color: #cdb6e943; }
 .lounge-footer > .container-hb { padding-top: clamp(2rem, 5vw, 4.5rem); }
 .lounge-footer .footer-label { color: #ecd4fc; }
