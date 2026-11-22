@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { BUSINESS_HOURS_TEXT, isOpenNow, type Location } from '@/lib/locations'
-import ComingSoonOrderButton from '@/components/shared/ComingSoonOrderButton'
+import { ORDER_PATH } from '@/lib/ordering'
 
 export default function LocationCard({
   location,
@@ -71,9 +71,9 @@ export default function LocationCard({
         <a href={location.textHref} className="btn-outline-gold">
           Text the Lounge
         </a>
-      </div>
-      <div className="mt-4">
-        <ComingSoonOrderButton compact />
+        <Link href={ORDER_PATH} className="btn-outline">
+          Order Delivery
+        </Link>
       </div>
     </div>
   )

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BRAND, NAV_LINKS, ORDERING_COMING_SOON } from '@/lib/constants'
+import { BRAND, NAV_LINKS } from '@/lib/constants'
+import { ORDER_PATH } from '@/lib/ordering'
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -44,7 +45,7 @@ export default function Navbar() {
           </span>
         </Link>
         <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
-          {NAV_LINKS.filter(link => link.href !== '/locations').map(link => (
+          {NAV_LINKS.map(link => (
             <li key={link.href}>
               <Link href={link.href} aria-current={pathname === link.href ? 'page' : undefined} className="nav-link">
                 {link.label}
@@ -52,8 +53,8 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <Link href="/locations" className="btn-outline-gold site-nav-visit">
-          Visit Us <span aria-hidden="true" className="link-arrow" />
+        <Link href={ORDER_PATH} aria-current={pathname === ORDER_PATH ? 'page' : undefined} onClick={() => setOpen(false)} className="btn-gold site-nav-order">
+          Order{' '}<span className="hidden lg:inline">Delivery</span><span aria-hidden="true" className="link-arrow" />
         </Link>
         <button
           ref={toggle}
@@ -69,7 +70,7 @@ export default function Navbar() {
           </svg>
         </button>
         <div id="mobile-navigation" className="mobile-navigation lg:hidden" hidden={!open}>
-          <div className="container-hb py-5">
+          <div className="container-hb py-4">
             <ul>
               {NAV_LINKS.map(link => (
                 <li key={link.href} className="border-b border-white/10">
@@ -84,7 +85,6 @@ export default function Navbar() {
             <a href={BRAND.instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm text-hb-gold">
               {BRAND.instagram}
             </a>
-            <p className="mt-2 text-xs text-white/65">{ORDERING_COMING_SOON.label}</p>
           </div>
         </div>
       </nav>

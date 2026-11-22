@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FORT_LAUDERDALE } from '@/lib/locations'
+import { ORDER_PATH } from '@/lib/ordering'
 
 export default function HeroSection() {
   return (
@@ -15,14 +16,12 @@ export default function HeroSection() {
             Elevate{' '}<br />your <em>circle.</em>
           </h1>
           <p className="lounge-hero-description">
-            Fort Lauderdale’s alcohol-free lounge for kava, kratom teas, mocktails,
-            and a night out on Federal Highway.
+            Fort Lauderdale’s alcohol-free lounge for kava, kratom teas, and a night out on Federal Highway.
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
-            <Link href="/events" className="btn-gold">
-              Explore Events <span aria-hidden="true" className="link-arrow" />
-            </Link>
-            <Link href="/menu" className="btn-outline">View Menu</Link>
+            <Link href="/menu" className="btn-gold">View Menu <span aria-hidden="true" className="link-arrow" /></Link>
+            <Link href={ORDER_PATH} className="btn-outline">Order Delivery</Link>
+            <Link href="/events" className="lounge-hero-events">See Events</Link>
           </div>
         </div>
         <figure className="lounge-hero-media">

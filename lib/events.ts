@@ -30,14 +30,6 @@ export const HAPPY_HOUR = {
   ],
 } as const
 
-export const GALLON_SPECIALS = {
-  hours: 'All day, every day',
-  offers: [
-    { name: 'Gallons', price: '$30' },
-    { name: 'Half gallons', price: '$20' },
-  ],
-} as const
-
 export function isHappyHourNow(now = new Date()): boolean {
   const { day, hour } = getVenueClock(now)
   const openingHour = FORT_LAUDERDALE.hours.opens

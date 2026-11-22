@@ -21,7 +21,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'need-kava',
     question: 'Do I need to drink kava to come?',
-    answer: 'No. We also serve coffee, teas, mocktails, protein drinks, and other alcohol-free options.',
+    answer: 'No. We also serve coffee, teas, specialty sodas, protein shakes, and other alcohol-free options.',
     link: { href: '/menu', label: 'Explore the menu' },
   },
   {

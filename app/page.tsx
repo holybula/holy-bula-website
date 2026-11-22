@@ -28,7 +28,7 @@ const venue = {
   sameAs: [BRAND.instagramUrl],
   hasMap: googleMapsUrl,
   hasMenu: 'https://www.ascensionlounge.com/menu',
-  servesCuisine: ['Kava', 'Kratom Tea', 'Mocktails', 'Matcha', 'Coffee', 'Protein Shakes'],
+  servesCuisine: ['Kava', 'Kratom Tea', 'Coffee', 'Protein Shakes', 'Empanadas', 'Pizza'],
   openingHours: [BUSINESS_HOURS_STRUCTURED_DATA],
   priceRange: '$$',
   address: {
@@ -48,8 +48,8 @@ export default function HomePage() {
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <HappyHourBar />
-        <EventsThisWeek />
         <WhatWePour />
+        <EventsThisWeek />
         <TheSpace />
         <LocationHours />
         <WhosHere />
