@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | Ascension',
   },
   description:
-    'Ascension is a kava bar and alcohol-free lounge in Fort Lauderdale, Florida. Find kava, kratom teas, food, and weekly events.',
+    'Ascension is a South Florida alcohol-free lounge for meeting up, playing pool, and making a night of it. Visit us in Fort Lauderdale.',
   keywords: [
     'kava bar', 'kratom tea', 'Fort Lauderdale', 'alcohol-free lounge',
     'pool tournaments', 'happy hour', 'Ascension Lounge',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url:         '/',
     siteName:    'Ascension Lounge',
     title:       'Ascension | Elevate Your Circle',
-    description: 'Kava bar and alcohol-free lounge in Fort Lauderdale, FL.',
+    description: 'A South Florida alcohol-free lounge. Visit us in Fort Lauderdale.',
     images: [
       {
         url:    '/images/interior/pic_6.PNG',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card:        'summary_large_image',
     title:       'Ascension | Elevate Your Circle',
-    description: 'Kava bar and alcohol-free lounge in Fort Lauderdale, FL.',
+    description: 'A South Florida alcohol-free lounge. Visit us in Fort Lauderdale.',
     images:      ['/images/interior/pic_6.PNG'],
   },
   robots: {

@@ -5,7 +5,7 @@ import AboutContent from '@/components/about/AboutContent'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Get to know Ascension Kava Bar & Lounge, an alcohol-free lounge in Fort Lauderdale for specialty drinks, a daytime work session, and a night out.',
+  description: 'Get to know Ascension, a South Florida alcohol-free lounge. Visit our Fort Lauderdale spot for a drink, a work session, or a night out.',
   alternates: { canonical: 'https://www.ascensionlounge.com/about' },
 }
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
               Business by day. <span className="block text-hb-gold">Social by night.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-hb-off-white/80 md:text-lg">
-              Ascension is an alcohol-free lounge in Fort Lauderdale. Stop in for a drink, settle in for the afternoon, or make it a night with friends.
+              Ascension is a South Florida alcohol-free lounge. Stop in for a drink, settle in for the afternoon, or make it a night with friends.
             </p>
             <Link href="/locations" className="btn-gold mt-8">Plan your visit</Link>
           </div>

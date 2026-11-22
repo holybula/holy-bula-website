@@ -10,13 +10,13 @@ export default function HeroSection() {
         <div className="lounge-hero-content">
           <p className="eyebrow flex items-center gap-3">
             <span className="h-px w-8 bg-hb-gold" aria-hidden="true" />
-            Fort Lauderdale, Florida
+            South Florida
           </p>
           <h1 id="hero-heading" className="lounge-hero-heading">
             Elevate{' '}<br />your <em>circle.</em>
           </h1>
           <p className="lounge-hero-description">
-            Fort Lauderdale’s alcohol-free lounge for meeting up, playing pool, and making a night of it.
+            An alcohol-free lounge for meeting up, playing pool, and making a night of it.
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <Link href="/menu" className="btn-gold">View Menu <span aria-hidden="true" className="link-arrow" /></Link>
