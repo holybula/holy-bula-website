@@ -1,63 +1,64 @@
-import type { MenuItem, MenuCategory } from '@/lib/menu-data'
+import type { MenuAddOn, MenuItem } from '@/lib/menu-data'
+import styles from '@/app/menu/menu.module.css'
 
 interface MenuItemCardProps {
-  item:     MenuItem
-  category: MenuCategory
+  item: MenuItem
 }
 
-function formatPrice(n: number) {
-  return `$${n.toFixed(2)}`
+function formatPrice(price: number) {
+  return '$' + price.toFixed(2)
 }
 
-export default function MenuItemCard({ item, category }: MenuItemCardProps) {
-  const allAddOns = [
-    ...(category.addOns ?? []),
-    ...(item.addOns ?? []),
-  ]
-
+export function AddOns({ items }: { items: MenuAddOn[] }) {
   return (
-    <article className="flex flex-col gap-4 border border-white/10 bg-hb-black-2 px-5 py-5 sm:px-6">
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-display text-2xl font-normal leading-tight text-[#f5ecdc]">
-          {item.name}
-        </h3>
-        {!item.sizes?.length && item.price != null && (
-          <p className="text-sm font-medium tabular-nums text-hb-gold">{formatPrice(item.price)}</p>
-        )}
-      </div>
+    <div className={styles.addOns}>
+      <p className={styles.detailLabel}>Add-ons</p>
+      <dl className={styles.prices}>
+        {items.map(addOn => (
+          <div key={addOn.id}>
+            <dt>{addOn.name}</dt>
+            <dd>+{formatPrice(addOn.price)}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
 
-      {item.description && (
-        <p className="text-sm leading-relaxed text-[#d8ccc0]">{item.description}</p>
-      )}
-
-      {item.sizes && item.sizes.length > 0 && (
-        <ul className="flex flex-col gap-2 border-t border-white/10 pt-3">
-          {item.sizes.map(size => (
-            <li key={size.label} className="flex justify-between gap-3 text-sm">
-              <span className="text-[#d8ccc0]">{size.label}</span>
-              <span className="font-medium tabular-nums text-hb-gold">{formatPrice(size.price)}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {allAddOns.length > 0 && (
-        <div className="border-t border-white/10 pt-3">
-          <p className="mb-2 text-xs font-medium uppercase tracking-[0.12em] text-hb-gold">Add-ons</p>
-          <ul className="flex flex-col gap-2">
-            {allAddOns.map(addOn => (
-              <li key={addOn.id} className="flex justify-between gap-3 text-sm">
-                <span className="text-[#d8ccc0]">{addOn.name}</span>
-                <span className="font-medium tabular-nums text-hb-gold">+{formatPrice(addOn.price)}</span>
-              </li>
-            ))}
-          </ul>
+export default function MenuItemCard({ item }: MenuItemCardProps) {
+  return (
+    <article className={styles.card}>
+      <div className={styles.cardBody}>
+        <div className={styles.cardHeading}>
+          <h3>{item.name}</h3>
+          {item.price != null && <p className={styles.price}>{formatPrice(item.price)}</p>}
         </div>
-      )}
 
-      {item.note && (
-        <p className="text-sm italic text-[#d8ccc0]">{item.note}</p>
-      )}
+        {item.description && <p className={styles.detail}>{item.description}</p>}
+
+        {item.sizes && (
+          <dl className={styles.prices}>
+            {item.sizes.map(size => (
+              <div key={size.label}>
+                <dt>{size.label}</dt>
+                <dd>{formatPrice(size.price)}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+        {item.options?.map(option => (
+          <div key={option.label} className={styles.options}>
+            <p className={styles.detailLabel}>{option.label}</p>
+            <ul className={styles.optionList} aria-label={option.label}>
+              {option.values.map(value => <li key={value}>{value}</li>)}
+            </ul>
+          </div>
+        ))}
+
+        {item.addOns && <AddOns items={item.addOns} />}
+        {item.note && <p className={styles.note}>{item.note}</p>}
+      </div>
     </article>
   )
 }

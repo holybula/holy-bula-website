@@ -1,56 +1,63 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import InteractiveMenu from '@/components/menu/InteractiveMenu'
-import { MENU_IMAGE } from '@/lib/menu'
+import { MENU_CATEGORIES } from '@/lib/menu-data'
+import { ORDER_PATH } from '@/lib/ordering'
+import MenuSections from '@/components/menu/MenuSections'
+import styles from './menu.module.css'
 
 export const metadata: Metadata = {
   title: 'Menu',
-  description: 'Browse the Ascension Fort Lauderdale menu for kava, kratom teas, coffee, matcha, mocktails, and more.',
+  description: 'Explore the Fort Lauderdale lounge menu for kava, kratom teas, shakes, coffee, sodas, empanadas, pizza, and sweets.',
   alternates: { canonical: '/menu' },
 }
 
 export default function MenuPage() {
   return (
-    <main id="main-content" tabIndex={-1} className="min-h-screen bg-hb-black">
-      <section className="relative isolate flex min-h-[24rem] items-end overflow-hidden border-b border-white/10 pb-12 pt-32 md:min-h-[30rem] md:pb-16 md:pt-36">
-        <div className="absolute inset-0 md:left-[45%]">
+    <main id="main-content" tabIndex={-1} className={styles.menuPage}>
+      <section className={styles.hero} aria-labelledby="menu-title">
+        <div className={styles.heroMedia} aria-hidden="true">
           <Image
             src="/images/interior/holybula-art-1.PNG"
             alt=""
             fill
             priority
-            sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover object-[center_59%]"
+            sizes="(min-width: 768px) 51vw, 100vw"
+            className={styles.heroImage}
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,14,16,0.97),rgba(16,14,16,0.76)_49%,rgba(16,14,16,0.3))] md:bg-[linear-gradient(90deg,#100e10_43%,rgba(16,14,16,0.16)_100%)]" aria-hidden="true" />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,#100e10,transparent_50%)]" aria-hidden="true" />
-
-        <div className="container-hb relative">
-          <p className="eyebrow">Fort Lauderdale</p>
-          <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] font-normal leading-[0.9] tracking-tight text-[#f5ecdc]">
-            The drink menu
-          </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-[#d8ccc0] md:text-lg">
-            Kava, kratom teas, espresso, matcha, and crafted alcohol-free cocktails.
-          </p>
-          <Link href="/events#happy-hour" className="mt-7 inline-flex min-h-11 items-center border-b border-hb-gold/60 pb-1 text-sm font-medium text-hb-gold transition-colors hover:border-hb-gold hover:text-[#f5ecdc]">
-            Happy hour specials
-          </Link>
+        <div className={'container-hb ' + styles.heroContent}>
+          <p className="eyebrow">Fort Lauderdale · In-store menu</p>
+          <h1 id="menu-title" className={styles.title}>The menu.</h1>
+          <p className={styles.intro}>Kava, kratom teas, coffee, and something to eat.</p>
+          <div className={styles.heroActions}>
+            <a href="#menu-categories" className="btn-gold">Browse Menu</a>
+            <Link href={ORDER_PATH} className="btn-outline-gold">
+              Order Online <span aria-hidden="true" className="link-arrow" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      <InteractiveMenu />
-
-      <section className="border-t border-white/10 bg-hb-black-2 py-9 sm:py-12">
-        <div className="container-hb flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
-          <h2 className="font-display text-3xl font-normal leading-tight text-[#f5ecdc]">Printable menu</h2>
-          <a href={MENU_IMAGE} download className="btn-outline-gold">
-            Download menu
-          </a>
+      <nav id="menu-categories" className={styles.categories} aria-label="Menu categories" tabIndex={-1}>
+        <div className="container-hb">
+          <ul className={styles.categoryLinks}>
+            {MENU_CATEGORIES.map(category => (
+              <li key={category.id}>
+                <a href={'#' + category.id} className={styles.categoryLink}>{category.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </nav>
+
+      <div className="container-hb">
+        <div className={styles.utilities}>
+          <Link href="/events#happy-hour">Happy hour specials <span aria-hidden="true" className="link-arrow" /></Link>
+          <Link href="/menu/print">Printable menu <span aria-hidden="true" className="link-arrow" /></Link>
+        </div>
+        <MenuSections />
+      </div>
     </main>
   )
 }

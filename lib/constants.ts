@@ -6,10 +6,10 @@ export const BRAND = {
 } as const
 
 export const NAV_LINKS = [
-  { label: 'Events', href: '/events' },
   { label: 'Menu', href: '/menu' },
-  { label: 'About', href: '/about' },
+  { label: 'Events', href: '/events' },
   { label: 'Visit', href: '/locations' },
+  { label: 'About', href: '/about' },
   { label: 'Rewards', href: '/rewards' },
   { label: 'FAQs', href: '/faq' },
   { label: 'Contact', href: '/contact' },
@@ -17,13 +17,9 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = [
   ...NAV_LINKS,
+  { label: 'Order', href: '/order' },
   { label: 'Reviews', href: '/reviews' },
 ] as const
-
-export const ORDERING_COMING_SOON = {
-  label: 'Online Ordering Coming Soon',
-  message: 'Online ordering is currently being finalized.',
-} as const
 
 export type LocationId = 'fort-lauderdale'
 

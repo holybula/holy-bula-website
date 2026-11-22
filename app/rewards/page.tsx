@@ -29,11 +29,11 @@ export default function RewardsPage() {
         </div>
         <div className="relative aspect-[5/4] overflow-hidden border border-[#d6ac76]/20 bg-[#1b1519]">
           <Image
-            src="/images/interior/holybula-signature-drink.PNG"
-            alt="An Ascension signature drink"
+            src="/images/interior/holybula-art-3.PNG"
+            alt="Framed portrait inside Ascension Lounge"
             fill
             sizes="(max-width: 767px) 90vw, 40vw"
-            className="object-contain"
+            className="object-cover object-[50%_54%]"
             priority
           />
         </div>

@@ -44,7 +44,7 @@ export default function AboutContent() {
             <div id="kratom" className="border-t border-hb-gold/40 pt-5">
               <dt className="text-lg font-semibold text-hb-gold">Kratom</dt>
               <dd className="mt-2 max-w-md text-base leading-relaxed text-hb-off-white/80">
-                Kratom comes from the leaves of a Southeast Asian tree. At the bar, you&apos;ll find kratom teas alongside mocktails and other alcohol-free drinks.
+                Kratom comes from the leaves of a Southeast Asian tree. At the bar, you&apos;ll find kratom teas alongside coffee, sodas, and other alcohol-free drinks.
               </dd>
             </div>
           </dl>

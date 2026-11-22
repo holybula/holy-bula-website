@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | Ascension',
   },
   description:
-    'Ascension is a kava bar and alcohol-free lounge in Fort Lauderdale, Florida. Find kava, kratom teas, mocktails, and weekly events.',
+    'Ascension is a kava bar and alcohol-free lounge in Fort Lauderdale, Florida. Find kava, kratom teas, food, and weekly events.',
   keywords: [
     'kava bar', 'kratom tea', 'Fort Lauderdale', 'alcohol-free lounge',
     'pool tournaments', 'happy hour', 'Ascension Lounge',

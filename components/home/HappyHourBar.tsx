@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { GALLON_SPECIALS, HAPPY_HOUR, isHappyHourNow } from '@/lib/events'
+import { HAPPY_HOUR, isHappyHourNow } from '@/lib/events'
 import { formatHour } from '@/lib/locations'
 
 export default function HappyHourBar({ pageMode = false }: { pageMode?: boolean }) {
@@ -49,16 +49,7 @@ export default function HappyHourBar({ pageMode = false }: { pageMode?: boolean 
               ))}
             </ul>
 
-            {pageMode && (
-              <>
-                <OfferList offers={HAPPY_HOUR.offers} />
-                <div className="mt-9">
-                  <h3 className="text-2xl font-normal">Gallon specials</h3>
-                  <p className="mt-2 text-sm text-hb-gold">{GALLON_SPECIALS.hours}</p>
-                  <OfferList offers={GALLON_SPECIALS.offers} />
-                </div>
-              </>
-            )}
+            {pageMode && <OfferList offers={HAPPY_HOUR.offers} />}
           </div>
 
           {!pageMode && (

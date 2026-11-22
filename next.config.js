@@ -10,6 +10,11 @@ const nextConfig = {
         destination: '/locations',
         permanent: true,
       },
+      {
+        source: '/images/menu/fort-lauderdale-menu.PNG',
+        destination: '/menu/print',
+        permanent: true,
+      },
     ]
   },
 }
