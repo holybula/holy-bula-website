@@ -29,16 +29,14 @@ export default function WhatWePour() {
               </li>
             ))}
           </ul>
-          <div className="flex items-stretch justify-center border-t border-white/10 bg-hb-black-3 md:border-l md:border-t-0">
-            <div className="relative aspect-[4/3] w-full max-w-[22.5rem] overflow-hidden md:aspect-auto md:min-h-72">
-              <Image
-                src="/images/lounge/drink-pour.jpg"
-                alt="A bright blue drink being poured behind the Ascension bar"
-                fill
-                unoptimized
-                className="object-cover object-[50%_49%]"
-              />
-            </div>
+          <div className="relative aspect-[7/5] min-w-0 overflow-hidden border-t border-white/10 bg-hb-black-3 md:aspect-auto md:min-h-72 md:border-l md:border-t-0">
+            <Image
+              src="/images/lounge/drinks-and-bites.webp"
+              alt="Illustration of a kava shell, an iced botanical tea, and two empanadas"
+              fill
+              sizes="(max-width: 767px) 90vw, (max-width: 1330px) 38vw, 500px"
+              className="object-cover object-[63%_52%]"
+            />
           </div>
         </div>
       </div>
