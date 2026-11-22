@@ -18,11 +18,11 @@ export default function MenuPage() {
       <section className={styles.hero} aria-labelledby="menu-title">
         <div className={styles.heroMedia} aria-hidden="true">
           <Image
-            src="/images/lounge/tea-pour.jpg"
+            src="/images/lounge/kava-and-iced-tea.webp"
             alt=""
             fill
             priority
-            unoptimized
+            sizes="(max-width: 767px) 95vw, (max-width: 1023px) 43vw, 455px"
             className={styles.heroImage}
           />
         </div>

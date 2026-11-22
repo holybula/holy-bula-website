@@ -4,10 +4,30 @@ import { BRAND } from '@/lib/constants'
 import AnimatedReveal from '@/components/shared/AnimatedReveal'
 
 const PHOTOS = [
-  { src: '/images/interior/holybula-art-1.PNG', alt: 'Amber-lit artwork above lounge seating', position: 'object-center', unoptimized: false },
-  { src: '/images/lounge/pool-night.jpg', alt: 'A player lining up a shot at a Fort Lauderdale pool night', position: 'object-[50%_65%]', unoptimized: true },
-  { src: '/images/lounge/tea-pour.jpg', alt: 'Tea being poured at the Ascension bar', position: 'object-[50%_54%]', unoptimized: true },
-  { src: '/images/interior/holybula-art-3.PNG', alt: 'A framed portrait on the wall under violet lighting', position: 'object-center', unoptimized: false },
+  {
+    src: '/images/lounge/pool-night.jpg',
+    alt: 'A pool player lining up a shot at Ascension',
+    frame: 'col-span-2 aspect-[5/4] sm:col-span-1 sm:aspect-[4/5]',
+    position: 'object-[50%_62%]',
+    sizes: '(min-width: 1280px) 450px, (min-width: 640px) 36vw, 90vw',
+    unoptimized: true,
+  },
+  {
+    src: '/images/lounge/tea-pour.jpg',
+    alt: 'Tea being poured into a cup at the Ascension bar',
+    frame: 'aspect-[4/5]',
+    position: 'object-[58%_53%]',
+    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, 45vw',
+    unoptimized: true,
+  },
+  {
+    src: '/images/interior/holybula-art-1.PNG',
+    alt: 'Amber-lit artwork above a row of lounge chairs',
+    frame: 'aspect-[4/5]',
+    position: 'object-[50%_68%]',
+    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, 45vw',
+    unoptimized: false,
+  },
 ] as const
 
 export default function TheSpace() {
@@ -26,16 +46,16 @@ export default function TheSpace() {
             </a>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {PHOTOS.map(({ src, alt, position, unoptimized }, index) => (
-            <AnimatedReveal key={src} delay={index * 65} className="group relative aspect-[3/4] overflow-hidden border border-white/10">
+        <div className="grid grid-cols-2 items-end gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-4 lg:gap-5">
+          {PHOTOS.map(({ src, alt, frame, position, sizes, unoptimized }, index) => (
+            <AnimatedReveal key={src} delay={index * 65} className={'group relative overflow-hidden border border-white/10 ' + frame}>
               <Image
                 src={src}
                 alt={alt}
                 fill
                 unoptimized={unoptimized}
-                className={'object-cover transition-transform duration-700 motion-safe:group-hover:scale-105 ' + position}
-                sizes="(max-width: 1023px) 48vw, 24vw"
+                className={'object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.025] ' + position}
+                sizes={sizes}
               />
             </AnimatedReveal>
           ))}

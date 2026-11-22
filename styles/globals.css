@@ -196,7 +196,7 @@
 }
 
 .lounge-hero-image { position: relative; aspect-ratio: 1.15; background: #1f1927; overflow: hidden; }
-.lounge-hero-image img { object-position: center 62%; }
+.lounge-hero-image img { object-position: center 63%; }
 .lounge-hero-corner { position: absolute; width: 1.45rem; height: 1.45rem; pointer-events: none; border-color: var(--champagne); }
 .lounge-hero-corner-top { inset: -1px auto auto -1px; border-width: 1px 0 0 1px; }
 .lounge-hero-corner-bottom { inset: auto -1px -1px auto; border-width: 0 1px 1px 0; }
@@ -280,6 +280,7 @@
   .lounge-hero-heading { font-size: clamp(4.35rem, 13vw, 6.6rem); }
   .lounge-hero-media { max-width: 36rem; }
   .lounge-hero-image { aspect-ratio: 1.6; }
+  .lounge-hero-image img { object-position: center 67%; }
 }
 
 @media (max-width: 767px) {
