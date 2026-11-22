@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import '@/styles/lounge-cover.css'
 import EventsThisWeek from '@/components/home/EventsThisWeek'
 import HappyHourBar from '@/components/home/HappyHourBar'
 import HeroSection from '@/components/home/HeroSection'

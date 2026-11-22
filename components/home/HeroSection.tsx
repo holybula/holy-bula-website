@@ -12,7 +12,7 @@ export default function HeroSection() {
             alt="Guests gathered at the Ascension bar under violet lights"
             fill
             priority
-            sizes="(max-width: 850px) 100vw, (max-width: 1440px) 52vw, 750px"
+            sizes="100vw"
             className="object-cover"
           />
         </div>
