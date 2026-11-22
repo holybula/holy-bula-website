@@ -25,7 +25,10 @@ export default function AboutPage() {
             <p className="mt-6 max-w-lg text-base leading-relaxed text-hb-off-white/80 md:text-lg">
               Elevate your circle means finding people who bring out the best in you, and doing the same for them. Ascension is South Florida’s alcohol-free place to connect, build something, or just unwind with friends.
             </p>
-            <Link href="/locations" className="btn-gold mt-8">Plan your visit</Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="#mission" className="btn-gold">Our Mission</Link>
+              <Link href="/locations" className="btn-outline">Plan your visit</Link>
+            </div>
           </div>
           <div className="relative aspect-[5/4] overflow-hidden border border-hb-gold/25 bg-hb-black md:aspect-square lg:aspect-[6/5]">
             <Image

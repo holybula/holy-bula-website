@@ -6,15 +6,15 @@ export default function AboutContent() {
     <>
       <section
         id="about-us"
-        aria-labelledby="about-us-heading"
+        aria-labelledby="mission"
         className="container-hb section-padding grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-20"
       >
         <div>
-          <h2 id="about-us-heading" className="text-display-md font-normal">Our mission</h2>
+          <h2 id="mission" className="scroll-mt-28 text-display-md font-normal">Our Mission</h2>
         </div>
         <div className="grid max-w-3xl gap-5 text-base leading-relaxed text-hb-off-white/80 md:text-lg">
-          <p id="mission">
-            We&apos;re here to bring people together so they can bring out the best in each other. A conversation here can turn into a friendship, an idea, or someone in your corner. We want more of that in South Florida, long after you leave the lounge.
+          <p>
+            Our mission is to curate and fuel a culture of like minded individuals via specialty drinks, a comforting ambiance, and most importantly, the right people.
           </p>
           <p id="why-visit">
             Business by day. Social by night. Settle in and get some work done, make a new connection, or come after dark and relax with friends.
