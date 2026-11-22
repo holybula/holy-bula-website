@@ -48,8 +48,8 @@ export default function HomePage() {
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <HappyHourBar />
-        <WhatWePour />
         <EventsThisWeek />
+        <WhatWePour />
         <TheSpace />
         <LocationHours />
         <WhosHere />

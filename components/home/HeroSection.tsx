@@ -1,50 +1,46 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FORT_LAUDERDALE } from '@/lib/locations'
-import { ORDER_PATH } from '@/lib/ordering'
 
 export default function HeroSection() {
   return (
     <section className="lounge-hero" aria-labelledby="hero-heading">
-      <div className="container-hb lounge-hero-grid">
-        <div className="lounge-hero-content">
-          <p className="eyebrow flex items-center gap-3">
-            <span className="h-px w-8 bg-hb-gold" aria-hidden="true" />
-            South Florida
-          </p>
-          <h1 id="hero-heading" className="lounge-hero-heading">
-            Elevate{' '}<br />your <em>circle.</em>
-          </h1>
-          <p className="lounge-hero-description">
-            A South Florida lounge built on a simple idea: the right company brings out the best in us. Work, connect, or unwind with friends, without alcohol.
-          </p>
-          <div className="flex flex-wrap gap-3 sm:gap-4">
-            <Link href="/menu" className="btn-gold">View Menu <span aria-hidden="true" className="link-arrow" /></Link>
-            <Link href={ORDER_PATH} className="btn-outline">Order Delivery</Link>
-            <Link href="/events" className="lounge-hero-events">See Events</Link>
+      <div className="lounge-hero-stage">
+        <div className="lounge-hero-media">
+          <Image
+            src="/images/interior/pic_6.PNG"
+            alt="Guests gathered at the Ascension bar under violet lights"
+            fill
+            priority
+            sizes="(max-width: 800px) 100vw, 64vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="container-hb lounge-hero-inner">
+          <div className="lounge-hero-content">
+            <p className="eyebrow flex items-center gap-3">
+              <span className="h-px w-6 bg-hb-gold" aria-hidden="true" />
+              South Florida · Alcohol-free lounge
+            </p>
+            <h1 id="hero-heading" className="lounge-hero-heading">
+              Elevate{' '}<br />your <em>circle.</em>
+            </h1>
+            <p className="lounge-hero-description">
+              The right company brings out the best in us. Come to connect, make something happen, or just unwind with friends.
+            </p>
+            <div className="flex flex-wrap gap-2.5 sm:gap-3">
+              <Link href="/events" className="btn-gold">See what&apos;s on <span aria-hidden="true" className="link-arrow" /></Link>
+              <Link href="/menu" className="btn-outline">View menu</Link>
+            </div>
           </div>
         </div>
-        <figure className="lounge-hero-media">
-          <div className="lounge-hero-image">
-            <Image
-              src="/images/interior/pic_6.PNG"
-              alt="Guests gathered at the Ascension bar under violet lights"
-              fill
-              priority
-              sizes="(max-width: 800px) 100vw, (max-width: 1280px) 53vw, 650px"
-              className="object-cover"
-            />
-          </div>
-          <span className="lounge-hero-corner lounge-hero-corner-top" aria-hidden="true" />
-          <span className="lounge-hero-corner lounge-hero-corner-bottom" aria-hidden="true" />
-        </figure>
-        <div className="lounge-hero-address">
-          <Link href="/locations">
-            {FORT_LAUDERDALE.address.street} <span className="hidden sm:inline">· Fort Lauderdale, FL</span>
-             <span aria-hidden="true" className="link-arrow" />
-          </Link>
-          <span className="text-white/60">Business by day. Social by night.</span>
-        </div>
+      </div>
+
+      <div className="container-hb lounge-hero-address">
+        <span>Business by day. Social by night.</span>
+        <Link href="/locations">
+          {FORT_LAUDERDALE.address.street} · Fort Lauderdale <span aria-hidden="true" className="link-arrow" />
+        </Link>
       </div>
     </section>
   )

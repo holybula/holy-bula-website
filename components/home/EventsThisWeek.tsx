@@ -24,7 +24,7 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
     <section
       id={pageMode ? 'weekly-schedule' : 'events'}
       aria-labelledby="weekly-schedule-heading"
-      className={pageMode ? 'scroll-mt-28' : 'section-padding border-y border-white/10 bg-hb-black-2'}
+      className={pageMode ? 'scroll-mt-28' : 'border-y border-white/10 bg-hb-black-2 py-9 md:py-12'}
     >
       <div className="container-hb">
         <div className={pageMode ? '' : 'grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-16'}>
