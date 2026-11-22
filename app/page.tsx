@@ -45,7 +45,7 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(venue) }} />
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1} className="lounge-home">
         <HeroSection />
         <HappyHourBar />
         <EventsThisWeek />

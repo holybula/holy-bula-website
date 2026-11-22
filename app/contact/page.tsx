@@ -15,8 +15,8 @@ export default function ContactPage() {
   const emailHref = `mailto:${BRAND.email}`
 
   return (
-    <main id="main-content" tabIndex={-1} className="min-h-screen bg-[#100e10]">
-      <section className="container-hb grid items-stretch gap-8 pb-14 pt-32 sm:gap-12 md:grid-cols-[1.15fr_0.85fr] md:pb-20 md:pt-40" aria-labelledby="contact-heading">
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--contact">
+      <section className="venue-masthead container-hb grid items-stretch gap-8 pb-14 pt-32 sm:gap-12 md:grid-cols-[1.15fr_0.85fr] md:pb-20 md:pt-40" aria-labelledby="contact-heading">
         <div>
           <p className="eyebrow">Fort Lauderdale</p>
           <h1 id="contact-heading" className="text-[clamp(2.8rem,7vw,6.5rem)] font-normal leading-[0.96] tracking-tight">
@@ -53,7 +53,7 @@ export default function ContactPage() {
             Hours &amp; Directions
           </Link>
         </div>
-        <div className="relative min-h-64 overflow-hidden border border-[#d6ac76]/20">
+        <div className="venue-masthead-photo relative min-h-64 overflow-hidden border border-[#d6ac76]/20">
           <Image
             src="/images/interior/holybula-art-1.PNG"
             alt="Framed artwork above the lounge seating at Ascension"
@@ -65,7 +65,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#d6ac76]/20 bg-[#1b1519]" aria-labelledby="gathering-heading">
+      <section className="venue-closing-panel border-y border-[#d6ac76]/20 bg-[#1b1519]" aria-labelledby="gathering-heading">
         <div className="container-hb grid items-end gap-7 py-12 sm:grid-cols-[1fr_auto] md:py-16">
           <div>
             <h2 id="gathering-heading" className="text-[clamp(2rem,4vw,3.8rem)] font-normal tracking-tight">

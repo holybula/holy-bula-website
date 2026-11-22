@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--locations">
       <LocationHours pageMode />
     </main>
   )

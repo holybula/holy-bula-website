@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--faq">
       <section
-        className="border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
+        className="venue-masthead border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
         aria-labelledby="faq-page-heading"
       >
         <div className="container-hb">

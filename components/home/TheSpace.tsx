@@ -46,9 +46,9 @@ export default function TheSpace() {
             </a>
           </div>
         </div>
-        <div className="grid grid-cols-2 items-end gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-4 lg:gap-5">
+        <div className="lounge-photo-grid grid grid-cols-2 items-end gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-4 lg:gap-5">
           {PHOTOS.map(({ src, alt, frame, position, sizes, unoptimized }, index) => (
-            <AnimatedReveal key={src} delay={index * 65} className={'group relative overflow-hidden border border-white/10 ' + frame}>
+            <AnimatedReveal key={src} delay={index * 65} className={'group lounge-photo relative overflow-hidden ' + frame}>
               <Image
                 src={src}
                 alt={alt}

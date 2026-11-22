@@ -1,0 +1,235 @@
+/* Shared editorial system for the public interior routes; homepage and print stay independent. */
+.venue-inner {
+  --inner-ink: #100a17;
+  --inner-panel: #1b1025;
+  --inner-ivory: #faf0e8;
+  --inner-gold: #f0c78f;
+  --inner-line: rgb(231 196 240 / 19%);
+  --inner-title: var(--font-dm-sans), system-ui, sans-serif;
+  background: radial-gradient(ellipse 85% 29rem at 90% 0, #341b41 0%, transparent 85%), var(--inner-ink);
+  color: var(--inner-ivory);
+}
+
+.venue-inner .venue-masthead {
+  padding-top: calc(var(--nav-height) + clamp(2.15rem, 6.5vw, 6rem));
+  padding-bottom: clamp(2rem, 5vw, 4.75rem);
+  border-color: var(--inner-line);
+  background: transparent;
+}
+
+.venue-inner .venue-masthead h1,
+.venue-inner--locations #locations-heading {
+  color: var(--inner-ivory);
+  font-family: var(--inner-title);
+  font-size: clamp(2.55rem, 8.6vw, 6.65rem);
+  font-weight: 760;
+  line-height: 0.91;
+  letter-spacing: -0.073em;
+  text-wrap: balance;
+}
+
+.venue-inner .venue-masthead h1 em,
+.venue-inner--locations #locations-heading em,
+.venue-inner--about .venue-masthead h1 span {
+  color: var(--inner-gold);
+  font-family: var(--font-instrument), Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -.02em;
+}
+
+.venue-inner .venue-masthead .eyebrow,
+.venue-inner--locations .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: clamp(0.75rem, 2vw, 1.3rem);
+  color: var(--inner-gold);
+}
+
+.venue-inner .venue-masthead .eyebrow::before,
+.venue-inner--locations .eyebrow::before {
+  width: 1.25rem;
+  height: 1px;
+  background: currentColor;
+  content: '';
+  flex: 0 0 auto;
+}
+
+.venue-inner .venue-masthead-photo {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  border: 0;
+  background: var(--inner-panel);
+  box-shadow: 0 1rem 2.5rem rgb(8 4 14 / 32%);
+}
+
+.venue-inner .venue-masthead-photo::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--inner-line);
+  background: linear-gradient(15deg, rgb(18 7 28 / 27%), transparent 48%);
+  content: '';
+  pointer-events: none;
+}
+
+.venue-inner--about .venue-masthead-photo,
+.venue-inner--events .venue-masthead-photo,
+.venue-inner--reviews .venue-masthead-photo,
+.venue-inner--rewards .venue-masthead-photo {
+  aspect-ratio: 16 / 10;
+}
+
+.venue-inner--about .venue-masthead h1 {
+  font-size: clamp(2.55rem, 6.7vw, 5.8rem);
+  text-wrap: auto;
+}
+
+.venue-inner .venue-events-intro {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.venue-inner .venue-schedule {
+  border-top: 1px solid var(--inner-line);
+  background: linear-gradient(125deg, #24142f, var(--inner-ink) 68%);
+}
+
+.venue-inner .venue-schedule [aria-current='date'] {
+  border-inline-start: 2px solid var(--inner-gold);
+  background: rgb(240 199 143 / 10%);
+}
+
+.venue-inner .venue-schedule li > p:first-of-type {
+  font-weight: 650;
+  letter-spacing: -0.018em;
+}
+
+.venue-inner--locations > section {
+  border: 0;
+  padding-top: var(--nav-height);
+  background: transparent;
+}
+
+.venue-inner--locations > section > .container-hb > div + div {
+  gap: clamp(0.75rem, 2.6vw, 2rem);
+}
+
+.venue-inner--locations > section > .container-hb > div + div > div {
+  border: 1px solid var(--inner-line);
+  background: var(--inner-panel);
+}
+
+.venue-inner--locations address + div {
+  border-color: var(--inner-line);
+}
+
+.venue-inner .venue-closing-panel,
+.venue-inner--about [aria-labelledby='botanicals-heading'] {
+  background: linear-gradient(110deg, #281638, #1a1123 78%);
+  border-color: var(--inner-line);
+}
+
+.venue-inner--faq aside {
+  border-color: var(--inner-line);
+  border-top: 2px solid var(--inner-gold);
+  background: var(--inner-panel);
+}
+
+.venue-inner--faq .venue-masthead h1 {
+  max-width: 13ch;
+  font-size: clamp(2.35rem, 8.5vw, 6.45rem);
+}
+
+.venue-inner :is(#member-heading, #gathering-heading, #faq-contact-heading, #about-location-heading, #botanicals-heading) {
+  font-family: var(--inner-title);
+  font-weight: 700;
+  letter-spacing: -0.049em;
+}
+
+.venue-inner--order [aria-label='Delivery providers'] {
+  gap: 0;
+  border-top: 1px solid var(--inner-line);
+}
+
+.venue-inner--order [aria-label='Delivery providers'] a {
+  border: 0;
+  border-bottom: 1px solid var(--inner-line);
+  background: rgb(18 10 26 / 70%);
+}
+
+.venue-inner--order [aria-label='Delivery providers'] a:hover {
+  background: #2c193a;
+}
+
+.venue-inner--order [aria-label='Delivery providers'] a > span:first-child {
+  font-family: var(--inner-title);
+  font-weight: 675;
+  letter-spacing: -0.045em;
+}
+
+.venue-inner .venue-mission h2 {
+  color: var(--inner-gold);
+  font-family: var(--inner-title);
+  font-size: clamp(1.65rem, 4vw, 3.15rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.venue-inner .venue-mission-copy > p:first-child {
+  padding-inline-start: clamp(1rem, 2.6vw, 2rem);
+  border-inline-start: 1px solid var(--inner-gold);
+  color: var(--inner-ivory);
+  font-family: var(--font-instrument), Georgia, serif;
+  font-size: clamp(1.6rem, 3.65vw, 3.25rem);
+  letter-spacing: -0.012em;
+  line-height: 1.13;
+}
+
+@media (max-width: 767px) {
+  .venue-inner--contact .venue-masthead-photo {
+    min-height: 12rem;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (min-width: 768px) {
+  .venue-inner--about .venue-masthead-photo,
+  .venue-inner--events .venue-masthead-photo,
+  .venue-inner--reviews .venue-masthead-photo,
+  .venue-inner--rewards .venue-masthead-photo {
+    aspect-ratio: 6 / 5;
+  }
+}
+
+.venue-inner--events #happy-hour {
+  border-color: var(--inner-line);
+  background: linear-gradient(115deg, #2a1837, var(--inner-ink) 82%);
+}
+
+.venue-inner--events #happy-hour-heading,
+.venue-inner--faq [aria-label='Questions and answers'] h2 {
+  font-family: var(--inner-title);
+}
+
+.venue-inner--events #happy-hour-heading {
+  font-weight: 740;
+  letter-spacing: -0.06em;
+}
+
+.venue-inner--faq [aria-label='Questions and answers'],
+.venue-inner--faq [aria-label='Questions and answers'] > div {
+  border-color: var(--inner-line);
+}
+
+.venue-inner--faq [aria-label='Questions and answers'] h2 {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.venue-inner--faq [aria-expanded='true'] {
+  color: var(--inner-gold);
+}

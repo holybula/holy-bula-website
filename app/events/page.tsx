@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   return (
-    <main id="main-content" tabIndex={-1} className="min-h-screen">
-      <section aria-labelledby="events-page-heading" className="container-hb pt-28 md:pt-36">
-        <div className="grid items-center gap-7 border-b border-white/10 pb-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:gap-12 md:pb-14">
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--events">
+      <section aria-labelledby="events-page-heading" className="venue-masthead container-hb pt-28 md:pt-36">
+        <div className="venue-events-intro grid items-center gap-7 border-b border-white/10 pb-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:gap-12 md:pb-14">
           <div>
             <p className="eyebrow">Every week in Fort Lauderdale</p>
             <h1 id="events-page-heading" className="text-display-xl font-normal">
@@ -29,7 +29,7 @@ export default function EventsPage() {
               <Link href="#happy-hour" className="btn-outline">Happy hour</Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] w-full max-w-[22.5rem] overflow-hidden border border-hb-gold/35 md:justify-self-end">
+          <div className="venue-masthead-photo relative aspect-[4/3] w-full max-w-[22.5rem] overflow-hidden border border-hb-gold/35 md:justify-self-end">
             <Image
               src="/images/lounge/pool-night.jpg"
               alt="A player lining up a shot at an Ascension pool tournament in Fort Lauderdale"
@@ -42,7 +42,7 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <div className="py-10 md:py-14">
+      <div className="venue-schedule py-10 md:py-14">
         <EventsThisWeek pageMode />
       </div>
 

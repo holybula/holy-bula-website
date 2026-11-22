@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function OrderPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--order">
       <section
         aria-labelledby="order-heading"
-        className="border-b border-hb-gold/20 bg-hb-black-2 bg-[radial-gradient(ellipse_at_top_right,#291e2b,transparent_65%)] pb-14 pt-28 md:pb-20 md:pt-36 lg:pb-28"
+        className="venue-masthead border-b border-hb-gold/20 bg-hb-black-2 bg-[radial-gradient(ellipse_at_top_right,#291e2b,transparent_65%)] pb-14 pt-28 md:pb-20 md:pt-36 lg:pb-28"
       >
         <div className="container-hb grid items-start gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center md:gap-12 lg:gap-20">
           <div>

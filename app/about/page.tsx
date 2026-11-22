@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--about">
       <section
-        className="border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
+        className="venue-masthead border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
         aria-labelledby="about-page-heading"
       >
         <div className="container-hb grid items-center gap-9 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
@@ -30,7 +30,7 @@ export default function AboutPage() {
               <Link href="/locations" className="btn-outline">Plan your visit</Link>
             </div>
           </div>
-          <div className="relative aspect-[5/4] overflow-hidden border border-hb-gold/25 bg-hb-black md:aspect-square lg:aspect-[6/5]">
+          <div className="venue-masthead-photo relative aspect-[5/4] overflow-hidden border border-hb-gold/25 bg-hb-black md:aspect-square lg:aspect-[6/5]">
             <Image
               src="/images/interior/holybula-art-1.PNG"
               alt="A warmly lit painting above the lounge seating at Ascension"

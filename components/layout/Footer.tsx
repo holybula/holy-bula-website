@@ -19,7 +19,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-hb-gold/25 bg-hb-black-2">
+    <footer className="lounge-footer border-t border-hb-gold/25 bg-hb-black-2">
       <div className="container-hb pb-4 pt-8 md:pt-10">
         <div className="grid gap-x-9 gap-y-6 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1.3fr]">
           <div>

@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function ReviewsPage() {
   return (
-    <main id="main-content" tabIndex={-1}>
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--reviews">
       <section
-        className="border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
+        className="venue-masthead border-b border-hb-gold/20 bg-hb-black-2 pb-12 pt-28 md:pb-16 md:pt-36"
         aria-labelledby="reviews-heading"
       >
         <div className="container-hb grid items-center gap-8 md:grid-cols-2 md:gap-14">
@@ -35,7 +35,7 @@ export default function ReviewsPage() {
               <Link href="/locations" className="btn-outline">Plan your visit</Link>
             </div>
           </div>
-          <div className="relative aspect-[5/4] overflow-hidden border border-hb-gold/25 bg-hb-black">
+          <div className="venue-masthead-photo relative aspect-[5/4] overflow-hidden border border-hb-gold/25 bg-hb-black">
             <Image
               src="/images/interior/pic_6.PNG"
               alt="Guests gathered in the lounge under purple lights"

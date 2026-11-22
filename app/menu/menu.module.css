@@ -546,3 +546,132 @@
   .menuThumbnail { width: 3.25rem; }
   .photoGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Photo-led editorial treatment for the online menu only. Keep printed styles untouched. */
+.menuPage {
+  --menu-ink: #100a17;
+  --menu-plum: #1b1025;
+  --menu-gold: #f0c78f;
+  --menu-line: rgb(231 196 240 / 19%);
+  --menu-title-font: var(--font-dm-sans), system-ui, sans-serif;
+  background: var(--menu-ink);
+}
+
+.menuPage .hero {
+  min-height: 19.5rem;
+  padding-block: calc(var(--nav-height) + clamp(2.1rem, 6vw, 5.5rem)) clamp(1.85rem, 5vw, 4rem);
+  border-color: var(--menu-line);
+  background: radial-gradient(ellipse at 90% 15%, #3d2049 0%, var(--menu-plum) 62%, var(--menu-ink) 100%);
+}
+
+.menuPage .heroMedia {
+  width: min(100%, 31rem);
+}
+
+.menuPage .heroMedia::after {
+  background:
+    linear-gradient(90deg, #1b1025 1%, #1b1025f7 27%, #1b10257a 62%, #1b102515 100%),
+    linear-gradient(0deg, #1b1025e6 0%, #1b102500 82%);
+}
+
+.menuPage .heroActions { position: relative; }
+
+.menuPage .title {
+  color: #faf0e8;
+  font-family: var(--menu-title-font);
+  font-size: clamp(3rem, 11vw, 8rem);
+  font-weight: 760;
+  letter-spacing: -0.08em;
+  line-height: 0.91;
+}
+
+.menuPage .intro {
+  max-width: 30ch;
+  color: #f3e6ef;
+}
+
+.menuPage .categories {
+  border-color: var(--menu-line);
+  background: #201329;
+}
+
+.menuPage .categoryLinks {
+  gap: 0 0.65rem;
+  padding-block: 0.45rem;
+}
+
+.menuPage .categoryLink {
+  justify-content: flex-start;
+  padding-inline: 0.24rem;
+  border: 0;
+  border-bottom: 1px solid var(--menu-line);
+  font-weight: 660;
+  text-align: start;
+}
+
+.menuPage .categoryLink:is(:hover, :focus-visible) {
+  color: var(--menu-gold);
+  border-color: var(--menu-gold);
+  background: transparent;
+}
+
+.menuPage .categoryHeading {
+  border-bottom-color: var(--menu-line);
+  padding-block: 0.9rem;
+}
+
+.menuPage .categoryHeading h2 {
+  min-width: 0;
+  font-family: var(--menu-title-font);
+  font-size: clamp(1.58rem, 4vw, 3.15rem);
+  font-weight: 730;
+  letter-spacing: -0.061em;
+}
+
+.menuPage .card {
+  border: 0;
+  border-top: 1px solid var(--menu-line);
+  background: var(--menu-plum);
+}
+
+.menuPage .cardHeading h3 {
+  font-family: var(--menu-title-font);
+  font-size: clamp(1.12rem, 2vw, 1.52rem);
+  font-weight: 675;
+  letter-spacing: -0.043em;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.menuPage .cardBody { gap: 0.55rem; }
+
+.menuPage .price,
+.menuPage .prices dd {
+  color: var(--menu-gold);
+}
+
+.menuPage .menuThumbnail,
+.menuPage .photoTileMedia {
+  border-radius: 0.2rem;
+  background: #120b1b;
+}
+
+@media (max-width: 479px) {
+  .menuPage .heroMedia { width: 84%; }
+  .menuPage .heroMedia::after {
+    background: linear-gradient(90deg, #1b1025 0%, #1b1025b8 33%, #1b102538 100%), linear-gradient(0deg, #1b1025 5%, transparent 68%);
+  }
+}
+
+@media (min-width: 768px) {
+  .menuPage .hero { min-height: clamp(22rem, 37vw, 29rem); }
+  .menuPage .heroMedia { width: min(48vw, 36rem); }
+  .menuPage .heroMedia::after {
+    background: linear-gradient(90deg, #23152e 0%, transparent 40%), linear-gradient(0deg, #1b10256b 0%, transparent 56%);
+  }
+}
+
+@media (min-width: 1120px) {
+  .menuPage .categoryLinks { padding-block: 0.18rem; }
+  .menuPage .categoryLink { justify-content: center; border-color: transparent; }
+}

@@ -12,7 +12,7 @@ export default function LocationHours({ pageMode = false }: LocationHoursProps) 
   return (
     <section
       id={pageMode ? undefined : 'locations'}
-      className={`relative border-t border-[#d6ac76]/15 bg-[#100e10] ${pageMode ? 'pt-16 md:pt-24' : ''}`}
+      className={`lounge-location relative border-t border-[#d6ac76]/15 bg-[#100e10] ${pageMode ? 'pt-16 md:pt-24' : ''}`}
       aria-labelledby="locations-heading"
     >
       <div className="container-hb section-padding">

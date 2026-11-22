@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function RewardsPage() {
   return (
-    <main id="main-content" tabIndex={-1} className="min-h-screen bg-[#100e10]">
+    <main id="main-content" tabIndex={-1} className="venue-inner venue-inner--rewards">
       <section
-        className="container-hb grid items-center gap-8 pb-14 pt-32 md:grid-cols-[1.15fr_0.85fr] md:gap-14 md:pb-20 md:pt-40"
+        className="venue-masthead container-hb grid items-center gap-8 pb-14 pt-32 md:grid-cols-[1.15fr_0.85fr] md:gap-14 md:pb-20 md:pt-40"
         aria-labelledby="rewards-heading"
       >
         <div>
@@ -27,7 +27,7 @@ export default function RewardsPage() {
             Join Rewards
           </a>
         </div>
-        <div className="relative aspect-[5/4] overflow-hidden border border-[#d6ac76]/20 bg-[#1b1519]">
+        <div className="venue-masthead-photo relative aspect-[5/4] overflow-hidden border border-[#d6ac76]/20 bg-[#1b1519]">
           <Image
             src="/images/interior/holybula-art-3.PNG"
             alt="Framed portrait inside Ascension Lounge"
@@ -39,7 +39,7 @@ export default function RewardsPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#d6ac76]/20 bg-[#1b1519]" aria-labelledby="member-heading">
+      <section className="venue-closing-panel border-y border-[#d6ac76]/20 bg-[#1b1519]" aria-labelledby="member-heading">
         <div className="container-hb grid items-center gap-7 py-12 sm:grid-cols-[1fr_auto] md:py-16">
           <div>
             <h2 id="member-heading" className="text-[clamp(2rem,4vw,3.8rem)] font-normal tracking-tight">

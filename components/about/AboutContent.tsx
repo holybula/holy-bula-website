@@ -7,12 +7,12 @@ export default function AboutContent() {
       <section
         id="about-us"
         aria-labelledby="mission"
-        className="container-hb section-padding grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-20"
+        className="venue-mission container-hb section-padding grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-20"
       >
         <div>
           <h2 id="mission" className="scroll-mt-28 text-display-md font-normal">Our Mission</h2>
         </div>
-        <div className="grid max-w-3xl gap-5 text-base leading-relaxed text-hb-off-white/80 md:text-lg">
+        <div className="venue-mission-copy grid max-w-3xl gap-5 text-base leading-relaxed text-hb-off-white/80 md:text-lg">
           <p>
             Our mission is to curate and fuel a culture of like minded individuals via specialty drinks, a comforting ambiance, and most importantly, the right people.
           </p>

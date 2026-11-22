@@ -12,13 +12,13 @@ export default function HeroSection() {
             alt="Guests gathered at the Ascension bar under violet lights"
             fill
             priority
-            sizes="(max-width: 800px) 100vw, 64vw"
+            sizes="(max-width: 850px) 100vw, (max-width: 1440px) 52vw, 750px"
             className="object-cover"
           />
         </div>
-        <div className="container-hb lounge-hero-inner">
+        <div className="lounge-hero-inner">
           <div className="lounge-hero-content">
-            <p className="eyebrow flex items-center gap-3">
+            <p className="eyebrow lounge-hero-kicker">
               <span className="h-px w-6 bg-hb-gold" aria-hidden="true" />
               South Florida · Alcohol-free lounge
             </p>
@@ -28,7 +28,7 @@ export default function HeroSection() {
             <p className="lounge-hero-description">
               The right company brings out the best in us. Come to connect, make something happen, or just unwind with friends.
             </p>
-            <div className="flex flex-wrap gap-2.5 sm:gap-3">
+            <div className="lounge-hero-actions">
               <Link href="/events" className="btn-gold">See what&apos;s on <span aria-hidden="true" className="link-arrow" /></Link>
               <Link href="/menu" className="btn-outline">View menu</Link>
             </div>

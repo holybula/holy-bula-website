@@ -24,7 +24,7 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
     <section
       id={pageMode ? 'weekly-schedule' : 'events'}
       aria-labelledby="weekly-schedule-heading"
-      className={pageMode ? 'scroll-mt-28' : 'border-y border-white/10 bg-hb-black-2 py-9 md:py-12'}
+      className={pageMode ? 'scroll-mt-28' : 'lounge-week'}
     >
       <div className="container-hb">
         <div className={pageMode ? '' : 'grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-16'}>
@@ -43,7 +43,7 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
           )}
 
           <div>
-            <ul className="border-t border-hb-gold-border">
+            <ul className="event-lines border-t border-hb-gold-border">
               {FORT_LAUDERDALE_SCHEDULE.map((event, index) => {
                 const isToday = index === today
 
@@ -51,7 +51,7 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
                   <li
                     key={event.day}
                     aria-current={isToday ? 'date' : undefined}
-                    className={`grid grid-cols-[5.65rem_minmax(0,1fr)] items-baseline gap-x-3 border-b border-white/10 px-3 py-4 sm:grid-cols-[8rem_minmax(0,1fr)_auto] sm:px-5 sm:py-5 ${isToday ? 'bg-hb-gold-dim' : ''}`}
+                    className={`event-line grid grid-cols-[5.65rem_minmax(0,1fr)] items-baseline gap-x-3 border-b border-white/10 px-3 py-4 sm:grid-cols-[8rem_minmax(0,1fr)_auto] sm:px-5 sm:py-5 ${isToday ? 'bg-hb-gold-dim' : ''}`}
                   >
                     <div className="row-span-2 flex flex-col items-start gap-1 sm:row-span-1">
                       <span className="text-sm text-hb-gold">{event.day}</span>
