@@ -290,17 +290,34 @@
 .lounge-home #whos-here { background: #322241; }
 .lounge-home #whos-here h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; font-size: clamp(3rem, 7vw, 6rem); }
 .lounge-home #whos-here .container-hb { padding-block: clamp(2.3rem, 5vw, 4.2rem); }
-.lounge-home .lounge-photo-grid { align-items: stretch; gap: clamp(0.45rem, 1vw, 0.95rem); }
-.lounge-home .lounge-photo:nth-child(2) { margin-top: clamp(0.45rem, 3vw, 2.25rem); }
-.lounge-home .lounge-photo:nth-child(3) { margin-bottom: clamp(0.45rem, 3vw, 2.25rem); }
-.lounge-home .lounge-photo img { filter: saturate(1.07); }
-
-@media (max-width: 639px) {
-  .lounge-home .lounge-photo-grid { gap: 0.75rem; }
-  .lounge-home .lounge-photo:nth-child(2),
-  .lounge-home .lounge-photo:nth-child(3) { margin-block: 0; }
+/* In-flow images give every gallery frame a size even in embedded WebKit. */
+.lounge-home .lounge-photo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 0.75rem;
 }
-
+.lounge-home .lounge-photo {
+  min-width: 0;
+  overflow: hidden;
+  background: #1b1025;
+}
+.lounge-home .lounge-photo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: clamp(13rem, 72vw, 28rem);
+  object-fit: cover;
+  filter: saturate(1.07);
+}
+@media (min-width: 801px) {
+  .lounge-home .lounge-photo-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(0.45rem, 1vw, 0.95rem);
+  }
+  .lounge-home .lounge-photo img { height: clamp(17rem, 28vw, 32rem); }
+  .lounge-home .lounge-photo:nth-child(2) { margin-top: clamp(0.45rem, 3vw, 2.25rem); }
+}
 .lounge-footer { background: #160e20; border-color: #cdb6e943; }
 .lounge-footer > .container-hb { padding-top: clamp(2rem, 5vw, 4.5rem); }
 .lounge-footer .footer-label { color: #ecd4fc; }

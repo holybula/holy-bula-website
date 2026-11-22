@@ -1,31 +1,33 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { BRAND } from '@/lib/constants'
-import AnimatedReveal from '@/components/shared/AnimatedReveal'
 
 const PHOTOS = [
   {
     src: '/images/lounge/pool-night.jpg',
     alt: 'A pool player lining up a shot at Ascension',
-    frame: 'aspect-[5/4] sm:aspect-[4/5]',
+    width: 360,
+    height: 640,
     position: 'object-[50%_62%]',
-    sizes: '(min-width: 1280px) 450px, (min-width: 640px) 36vw, calc(100vw - 40px)',
+    sizes: '(min-width: 1280px) 450px, (min-width: 801px) 36vw, calc(100vw - 40px)',
     unoptimized: true,
   },
   {
     src: '/images/lounge/tea-pour.jpg',
     alt: 'Tea being poured into a cup at the Ascension bar',
-    frame: 'aspect-[5/4] sm:aspect-[4/5]',
+    width: 360,
+    height: 640,
     position: 'object-[58%_53%]',
-    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, calc(100vw - 40px)',
+    sizes: '(min-width: 1280px) 375px, (min-width: 801px) 30vw, calc(100vw - 40px)',
     unoptimized: true,
   },
   {
     src: '/images/interior/holybula-art-1.PNG',
     alt: 'Amber-lit artwork above a row of lounge chairs',
-    frame: 'aspect-[5/4] sm:aspect-[4/5]',
+    width: 618,
+    height: 936,
     position: 'object-[50%_68%]',
-    sizes: '(min-width: 1280px) 375px, (min-width: 640px) 30vw, calc(100vw - 40px)',
+    sizes: '(min-width: 1280px) 375px, (min-width: 801px) 30vw, calc(100vw - 40px)',
     unoptimized: false,
   },
 ] as const
@@ -46,18 +48,19 @@ export default function TheSpace() {
             </a>
           </div>
         </div>
-        <div className="lounge-photo-grid grid grid-cols-1 items-end gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-4 lg:gap-5">
-          {PHOTOS.map(({ src, alt, frame, position, sizes, unoptimized }, index) => (
-            <AnimatedReveal key={src} delay={index * 65} className={'group lounge-photo relative overflow-hidden ' + frame}>
+        <div className="lounge-photo-grid">
+          {PHOTOS.map(({ src, alt, width, height, position, sizes, unoptimized }) => (
+            <figure key={src} className="group lounge-photo">
               <Image
                 src={src}
                 alt={alt}
-                fill
+                width={width}
+                height={height}
                 unoptimized={unoptimized}
                 className={'object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.025] ' + position}
                 sizes={sizes}
               />
-            </AnimatedReveal>
+            </figure>
           ))}
         </div>
       </div>
