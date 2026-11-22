@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { BRAND } from '@/lib/constants'
 import AnimatedReveal from '@/components/shared/AnimatedReveal'
 
 const PHOTOS = [
-  { file: 'holybula-art-1.PNG', alt: 'Amber-lit artwork above lounge seating' },
-  { file: 'holybula-art-4.PNG', alt: 'The pool table under a black-and-white portrait' },
-  { file: 'holybula-art-2.PNG', alt: 'Lounge seating beneath a framed black-and-white scene' },
-  { file: 'holybula-art-3.PNG', alt: 'A framed portrait on the wall under violet lighting' },
+  { src: '/images/interior/holybula-art-1.PNG', alt: 'Amber-lit artwork above lounge seating', position: 'object-center', unoptimized: false },
+  { src: '/images/lounge/pool-night.jpg', alt: 'A player lining up a shot at a Fort Lauderdale pool night', position: 'object-[50%_65%]', unoptimized: true },
+  { src: '/images/lounge/tea-pour.jpg', alt: 'Tea being poured at the Ascension bar', position: 'object-[50%_54%]', unoptimized: true },
+  { src: '/images/interior/holybula-art-3.PNG', alt: 'A framed portrait on the wall under violet lighting', position: 'object-center', unoptimized: false },
 ] as const
 
 export default function TheSpace() {
@@ -18,16 +19,22 @@ export default function TheSpace() {
             <p className="eyebrow">Inside Ascension</p>
             <h2 id="space-heading" className="text-display-lg">The Lounge.</h2>
           </div>
-          <Link href="/about" className="btn-outline">About Ascension <span aria-hidden="true" className="link-arrow" /></Link>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/about" className="btn-outline">About Ascension</Link>
+            <a href={BRAND.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-outline-gold">
+              More on Instagram <span aria-hidden="true" className="link-arrow" />
+            </a>
+          </div>
         </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {PHOTOS.map(({ file, alt }, index) => (
-            <AnimatedReveal key={file} delay={index * 65} className="group relative aspect-[3/4] overflow-hidden border border-white/10">
+          {PHOTOS.map(({ src, alt, position, unoptimized }, index) => (
+            <AnimatedReveal key={src} delay={index * 65} className="group relative aspect-[3/4] overflow-hidden border border-white/10">
               <Image
-                src={'/images/interior/' + file}
+                src={src}
                 alt={alt}
                 fill
-                className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-105"
+                unoptimized={unoptimized}
+                className={'object-cover transition-transform duration-700 motion-safe:group-hover:scale-105 ' + position}
                 sizes="(max-width: 1023px) 48vw, 24vw"
               />
             </AnimatedReveal>

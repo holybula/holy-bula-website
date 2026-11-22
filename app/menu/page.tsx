@@ -18,11 +18,11 @@ export default function MenuPage() {
       <section className={styles.hero} aria-labelledby="menu-title">
         <div className={styles.heroMedia} aria-hidden="true">
           <Image
-            src="/images/interior/holybula-art-1.PNG"
+            src="/images/lounge/tea-pour.jpg"
             alt=""
             fill
             priority
-            sizes="(min-width: 768px) 51vw, 100vw"
+            unoptimized
             className={styles.heroImage}
           />
         </div>
