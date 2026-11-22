@@ -4,7 +4,7 @@ import { FORT_LAUDERDALE } from '@/lib/locations'
 export default function ReviewsSection() {
   return (
     <section id="reviews" className="border-t border-[#d6ac76]/20 bg-[#100e10]" aria-labelledby="reviews-heading">
-      <div className="container-hb grid items-center gap-7 py-12 md:grid-cols-[1fr_auto] md:py-16">
+      <div className="container-hb grid items-center gap-5 py-8 md:grid-cols-[1fr_auto] md:py-10">
         <div>
           <h2 id="reviews-heading" className="text-[clamp(2rem,4vw,3.8rem)] font-normal tracking-tight">
             Guest reviews

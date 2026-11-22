@@ -12,8 +12,8 @@ import { BRAND } from '@/lib/constants'
 import { BUSINESS_HOURS_STRUCTURED_DATA, FORT_LAUDERDALE } from '@/lib/locations'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Ascension Kava Bar & Lounge | South Florida' },
-  description: 'An alcohol-free night out in South Florida. See what’s on at Ascension and plan your visit to our lounge in Fort Lauderdale.',
+  title: { absolute: 'Ascension | Elevate Your Circle | South Florida' },
+  description: 'Elevate your circle at Ascension, an alcohol-free South Florida lounge to work, connect, and unwind with friends. Visit us in Fort Lauderdale.',
   alternates: { canonical: '/' },
 }
 

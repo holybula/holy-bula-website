@@ -1,8 +1,12 @@
+import Image from 'next/image'
 import type { MenuAddOn, MenuItem } from '@/lib/menu-data'
+import type { MenuPhoto } from '@/lib/menu-photos'
 import styles from '@/app/menu/menu.module.css'
+import MenuPhotoGallery from './MenuPhotoGallery'
 
 interface MenuItemCardProps {
   item: MenuItem
+  photos?: readonly MenuPhoto[]
 }
 
 function formatPrice(price: number) {
@@ -25,12 +29,24 @@ export function AddOns({ items }: { items: MenuAddOn[] }) {
   )
 }
 
-export default function MenuItemCard({ item }: MenuItemCardProps) {
+export default function MenuItemCard({ item, photos }: MenuItemCardProps) {
+  const thumbnail = photos?.[0]
+  const shown = thumbnail?.size ? [thumbnail.flavor, thumbnail.size].filter(Boolean).join(' · ') : null
   return (
     <article className={styles.card}>
       <div className={styles.cardBody}>
-        <div className={styles.cardHeading}>
-          <h3>{item.name}</h3>
+        <div className={thumbnail ? `${styles.cardHeading} ${styles.cardHeadingWithPhoto}` : styles.cardHeading}>
+          {thumbnail && (
+            <span className={styles.menuThumbnail}>
+              <Image src={thumbnail.src} alt="" fill sizes="(max-width: 479px) 52px, 68px" />
+            </span>
+          )}
+          {shown ? (
+            <div className={styles.photoItemHeading}>
+              <h3>{item.name}</h3>
+              <span>Shown: {shown}</span>
+            </div>
+          ) : <h3>{item.name}</h3>}
           {item.price != null && <p className={styles.price}>{formatPrice(item.price)}</p>}
         </div>
 
@@ -58,6 +74,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
 
         {item.addOns && <AddOns items={item.addOns} />}
         {item.note && <p className={styles.note}>{item.note}</p>}
+        {photos && photos.length > 1 && <MenuPhotoGallery photos={photos} />}
       </div>
     </article>
   )

@@ -16,7 +16,7 @@ export default function HeroSection() {
             Elevate{' '}<br />your <em>circle.</em>
           </h1>
           <p className="lounge-hero-description">
-            An alcohol-free lounge for meeting up, playing pool, and making a night of it.
+            A South Florida lounge built on a simple idea: the right company brings out the best in us. Work, connect, or unwind with friends, without alcohol.
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <Link href="/menu" className="btn-gold">View Menu <span aria-hidden="true" className="link-arrow" /></Link>

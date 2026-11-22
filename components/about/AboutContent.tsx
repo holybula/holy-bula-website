@@ -10,17 +10,17 @@ export default function AboutContent() {
         className="container-hb section-padding grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-20"
       >
         <div>
-          <h2 id="about-us-heading" className="text-display-md font-normal">From the beginning</h2>
+          <h2 id="about-us-heading" className="text-display-md font-normal">Our mission</h2>
         </div>
         <div className="grid max-w-3xl gap-5 text-base leading-relaxed text-hb-off-white/80 md:text-lg">
           <p id="mission">
-            Ascension Kava Bar &amp; Lounge started in 2023 with a simple goal: to give people a place to connect over specialty drinks, any time of day.
+            We&apos;re here to bring people together so they can bring out the best in each other. A conversation here can turn into a friendship, an idea, or someone in your corner. We want more of that in South Florida, long after you leave the lounge.
           </p>
           <p id="why-visit">
-            Settle in for a work session, grab a drink to go, or meet up with friends after dark.
+            Business by day. Social by night. Settle in and get some work done, make a new connection, or come after dark and relax with friends.
           </p>
           <p id="who-you-meet">
-            Come on your own or bring friends. Whether it&apos;s your first visit or your usual spot, you&apos;re welcome here.
+            First time in or already a regular, there&apos;s room for you. The drinks bring us to the table. What we do for each other is what makes it a circle.
           </p>
           <Link
             href="/events"

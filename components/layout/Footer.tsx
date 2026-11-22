@@ -20,17 +20,14 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-hb-gold/25 bg-hb-black-2">
-      <div className="container-hb pb-6 pt-12 md:pt-16">
-        <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1.3fr]">
+      <div className="container-hb pb-4 pt-8 md:pt-10">
+        <div className="grid gap-x-9 gap-y-6 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1.3fr]">
           <div>
-            <Link href="/" className="wordmark mb-5" aria-label="Ascension home">
-              <Image src="/ascension-mark.svg" alt="" width={30} height={39} />
-              <span>
-                <span className="wordmark-name">Ascension</span>
-                <span className="wordmark-caption">Kava Bar &amp; Lounge</span>
-              </span>
+            <Link href="/" className="mb-3 inline-flex items-center gap-3" aria-label="Ascension home">
+              <Image src="/ascension-header-lockup.svg" alt="" width={80} height={64} />
+              <span className="max-w-28 text-lg font-medium leading-snug text-hb-off-white">Elevate your circle.</span>
             </Link>
-            <p className="text-sm text-white/70">Business by day.<br />Social by night.</p>
+            <p className="text-sm text-white/70">Business by day. Social by night.</p>
           </div>
           <div>
             <h2 className="footer-label">Explore</h2>
@@ -65,7 +62,7 @@ export default function Footer() {
             </form>
           </div>
         </div>
-        <div className="mt-10 border-t border-white/10 pt-5">
+        <div className="mt-6 border-t border-white/10 pt-4">
           <p className="text-xs text-white/60">© {new Date().getFullYear()} Ascension Kava Bar &amp; Lounge.</p>
         </div>
       </div>

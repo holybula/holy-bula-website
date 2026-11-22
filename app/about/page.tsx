@@ -23,7 +23,7 @@ export default function AboutPage() {
               Business by day. <span className="block text-hb-gold">Social by night.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-hb-off-white/80 md:text-lg">
-              Ascension is a South Florida alcohol-free lounge. Stop in for a drink, settle in for the afternoon, or make it a night with friends.
+              Elevate your circle means finding people who bring out the best in you, and doing the same for them. Ascension is South Florida’s alcohol-free place to connect, build something, or just unwind with friends.
             </p>
             <Link href="/locations" className="btn-gold mt-8">Plan your visit</Link>
           </div>

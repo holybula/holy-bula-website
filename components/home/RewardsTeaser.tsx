@@ -4,7 +4,7 @@ import { COPY, REWARDS_SIGNUP_URL } from '@/lib/constants'
 export default function RewardsTeaser() {
   return (
     <section id="rewards" className="border-y border-[#d6ac76]/20 bg-[#1b1519]" aria-labelledby="rewards-heading">
-      <div className="container-hb grid items-end gap-7 py-12 md:grid-cols-[1fr_auto] md:py-16">
+      <div className="container-hb grid items-end gap-5 py-8 md:grid-cols-[1fr_auto] md:py-10">
         <div>
           <p className="eyebrow">{COPY.rewardsEyebrow}</p>
           <h2 id="rewards-heading" className="text-[clamp(2rem,4vw,3.8rem)] font-normal tracking-tight">

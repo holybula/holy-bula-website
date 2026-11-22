@@ -1,4 +1,4 @@
-const VISIT_IDEAS = ['Grab a drink', 'Play a game of pool', 'Meet up with friends'] as const
+import Link from 'next/link'
 
 export default function WhosHere() {
   return (
@@ -9,11 +9,12 @@ export default function WhosHere() {
     >
       <div className="container-hb flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-10">
         <h2 id="whos-here-heading" className="shrink-0 text-[clamp(1.8rem,4vw,2.6rem)] font-normal">
-          Come as you are.
+          The Circle.
         </h2>
-        <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#e1d6ca] sm:text-base">
-          {VISIT_IDEAS.map(label => <li key={label}>{label}</li>)}
-        </ul>
+        <div className="max-w-2xl text-sm leading-relaxed text-[#e1d6ca] sm:text-base">
+          <p>What starts here can go beyond a night out: a new friend, an idea worth building, or someone in your corner.</p>
+          <Link href="/about#mission" className="mt-2 inline-flex min-h-11 items-center text-hb-gold underline underline-offset-4">What we&apos;re about</Link>
+        </div>
       </div>
     </section>
   )

@@ -1,4 +1,5 @@
 import { MENU_CATEGORIES } from '@/lib/menu-data'
+import { MENU_PHOTOS } from '@/lib/menu-photos'
 import MenuItemCard, { AddOns } from './MenuItemCard'
 import styles from '@/app/menu/menu.module.css'
 
@@ -27,7 +28,7 @@ export default function MenuSections({ printable = false }: { printable?: boolea
             </div>
             <div className={styles.cards} data-card-count={category.items.length}>
               {category.items.map(item => (
-                <MenuItemCard key={item.id} item={item} />
+                <MenuItemCard key={item.id} item={item} photos={printable ? undefined : MENU_PHOTOS[item.id]} />
               ))}
             </div>
             {category.addOns && <AddOns items={category.addOns} />}

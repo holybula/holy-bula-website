@@ -421,3 +421,128 @@
     padding-top: 0.35rem;
   }
 }
+
+/* Item photos are only rendered by the online menu. */
+.cardHeadingWithPhoto {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.45rem, 1.4vw, 0.75rem);
+}
+
+.menuThumbnail,
+.photoTileMedia {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border: 1px solid #f5ecdc26;
+  background: var(--ink);
+}
+
+.menuThumbnail {
+  display: block;
+  width: 3.25rem;
+}
+
+.photoItemHeading { min-width: 0; }
+
+.photoItemHeading span {
+  display: block;
+  margin-top: 0.22rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.menuThumbnail img,
+.photoTileMedia img {
+  object-fit: contain;
+}
+
+.photoGallery {
+  min-width: 0;
+  border-top: 1px solid #f5ecdc26;
+}
+
+.photoSummary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--champagne);
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+}
+
+.photoSummary::-webkit-details-marker { display: none; }
+.photoSummary:hover { color: var(--ivory); }
+.photoSummary span::before { content: '+'; }
+.photoGallery[open] .photoSummary span::before { content: '−'; }
+
+.photoGalleryBody {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.photoSizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.photoSizes button {
+  min-height: 44px;
+  padding-inline: 0.65rem;
+  border: 1px solid #f5ecdc36;
+  color: var(--ivory);
+  font-size: 0.78rem;
+}
+
+.photoSizes button:hover,
+.photoSizes button[aria-pressed='true'] {
+  border-color: var(--champagne);
+  background: #d6ac7620;
+  color: var(--champagne);
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 36rem;
+}
+
+.photoTile {
+  overflow: hidden;
+  border: 1px solid #f5ecdc26;
+  background: #100e10;
+}
+
+.photoTileMedia { border: 0; }
+
+.photoTile figcaption {
+  padding: 0.45rem 0.5rem;
+  color: var(--ivory);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.photoTile figcaption small {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+@media (min-width: 480px) {
+  .menuThumbnail { width: 4.25rem; }
+  .photoGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 640px) and (max-width: 860px) {
+  .menuThumbnail { width: 3.25rem; }
+  .photoGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
