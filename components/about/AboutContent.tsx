@@ -20,7 +20,7 @@ export default function AboutContent() {
             Settle in for a work session, grab a drink to go, or meet up with friends after dark.
           </p>
           <p id="who-you-meet">
-            The lounge brings together students, entrepreneurs, athletes, and DJs for everything from quiet afternoons to late-night events.
+            Come on your own or bring friends. Whether it&apos;s your first visit or your usual spot, you&apos;re welcome here.
           </p>
           <Link
             href="/events"

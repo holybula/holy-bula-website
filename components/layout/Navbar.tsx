@@ -37,12 +37,15 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <nav className="container-hb site-nav" aria-label="Main navigation">
-        <Link href="/" onClick={() => setOpen(false)} className="wordmark" aria-label="Ascension home">
-          <Image src="/ascension-mark.svg" alt="" width={28} height={36} priority />
-          <span>
-            <span className="wordmark-name">Ascension</span>
-            <span className="wordmark-caption">Kava Bar &amp; Lounge</span>
-          </span>
+        <Link href="/" onClick={() => setOpen(false)} className="inline-flex min-h-11 shrink-0 items-center" aria-label="Ascension Kava Bar & Lounge home">
+          <Image
+            src="/ascension-header-lockup.svg"
+            alt=""
+            width={98}
+            height={79}
+            priority
+            className="h-[3.625rem] w-auto object-contain sm:h-16"
+          />
         </Link>
         <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
           {NAV_LINKS.map(link => (

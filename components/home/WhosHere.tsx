@@ -1,4 +1,4 @@
-import { AUDIENCE_LABELS, COPY } from '@/lib/constants'
+const VISIT_IDEAS = ['Grab a drink', 'Play a game of pool', 'Meet up with friends'] as const
 
 export default function WhosHere() {
   return (
@@ -9,10 +9,10 @@ export default function WhosHere() {
     >
       <div className="container-hb flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-10">
         <h2 id="whos-here-heading" className="shrink-0 text-[clamp(1.8rem,4vw,2.6rem)] font-normal">
-          {COPY.whosHereEyebrow}
+          Come as you are.
         </h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#e1d6ca] sm:text-base">
-          {AUDIENCE_LABELS.map(label => <li key={label}>{label}</li>)}
+          {VISIT_IDEAS.map(label => <li key={label}>{label}</li>)}
         </ul>
       </div>
     </section>

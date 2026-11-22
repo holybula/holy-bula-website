@@ -16,7 +16,7 @@ export default function HeroSection() {
             Elevate{' '}<br />your <em>circle.</em>
           </h1>
           <p className="lounge-hero-description">
-            Fort Lauderdale’s alcohol-free lounge for kava, kratom teas, and a night out on Federal Highway.
+            Fort Lauderdale’s alcohol-free lounge for meeting up, playing pool, and making a night of it.
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <Link href="/menu" className="btn-gold">View Menu <span aria-hidden="true" className="link-arrow" /></Link>

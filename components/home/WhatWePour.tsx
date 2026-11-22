@@ -31,11 +31,11 @@ export default function WhatWePour() {
           </ul>
           <div className="relative aspect-[7/5] min-w-0 overflow-hidden border-t border-white/10 bg-hb-black-3 md:aspect-auto md:min-h-72 md:border-l md:border-t-0">
             <Image
-              src="/images/lounge/drinks-and-bites.webp"
-              alt="Illustration of a kava shell, an iced botanical tea, and two empanadas"
+              src="/images/interior/pic_6.PNG"
+              alt="Guests spending an evening together at the Ascension bar"
               fill
               sizes="(max-width: 767px) 90vw, (max-width: 1330px) 38vw, 500px"
-              className="object-cover object-[63%_52%]"
+              className="object-cover object-[50%_80%]"
             />
           </div>
         </div>

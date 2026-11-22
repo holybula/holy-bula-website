@@ -23,7 +23,7 @@ export default function AboutPage() {
               Business by day. <span className="block text-hb-gold">Social by night.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-hb-off-white/80 md:text-lg">
-              Ascension is where entrepreneurs, students, professionals, creators, and friends come together to work, connect, compete, and unwind.
+              Ascension is an alcohol-free lounge in Fort Lauderdale. Stop in for a drink, settle in for the afternoon, or make it a night with friends.
             </p>
             <Link href="/locations" className="btn-gold mt-8">Plan your visit</Link>
           </div>
