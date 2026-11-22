@@ -223,7 +223,8 @@
   color: var(--champagne);
   font-weight: 400;
   font-size: 1.19em;
-  letter-spacing: -0.06em;
+  margin-inline-start: 0.095em;
+  letter-spacing: -0.045em;
 }
 .lounge-hero-description {
   max-width: 28rem;
