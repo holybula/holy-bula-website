@@ -9,8 +9,12 @@ import RewardsTeaser from '@/components/home/RewardsTeaser'
 import TheSpace from '@/components/home/TheSpace'
 import WhatWePour from '@/components/home/WhatWePour'
 import WhosHere from '@/components/home/WhosHere'
+import { isThanksgivingSchedule } from '@/lib/events'
 import { BRAND } from '@/lib/constants'
 import { BUSINESS_HOURS_STRUCTURED_DATA, FORT_LAUDERDALE } from '@/lib/locations'
+
+// Refresh the initial schedule for readers without JavaScript as the holiday ends.
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: { absolute: 'Ascension | Elevate Your Circle | South Florida' },
@@ -49,7 +53,7 @@ export default function HomePage() {
       <main id="main-content" tabIndex={-1} className="lounge-home">
         <HeroSection />
         <HappyHourBar />
-        <EventsThisWeek />
+        <EventsThisWeek initialThanksgiving={isThanksgivingSchedule()} />
         <WhatWePour />
         <TheSpace />
         <LocationHours />

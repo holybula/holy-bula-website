@@ -16,6 +16,26 @@ export const FORT_LAUDERDALE_SCHEDULE: readonly DayEvent[] = [
   { day: 'Sunday', name: 'Football & Free Pizza', time: '1 PM' },
 ]
 
+// Thanksgiving week only. Friday at 08:00 UTC is 3:00 AM Eastern,
+// after the Thursday overnight window for the regular weekly schedule.
+const THANKSGIVING_NOTICE_START = Date.parse('2026-11-22T00:00:00-05:00')
+const THANKSGIVING_NOTICE_END = Date.parse('2026-11-27T03:00:00-05:00')
+
+export function isThanksgivingSchedule(now = new Date()): boolean {
+  const time = now.getTime()
+  return time >= THANKSGIVING_NOTICE_START && time < THANKSGIVING_NOTICE_END
+}
+
+export function getWeeklySchedule(showThanksgiving: boolean): readonly DayEvent[] {
+  if (!showThanksgiving) return FORT_LAUDERDALE_SCHEDULE
+
+  return FORT_LAUDERDALE_SCHEDULE.map(event =>
+    event.day === 'Thursday'
+      ? { ...event, name: 'Thanksgiving Pajama Party', time: 'Nov 26' }
+      : event
+  )
+}
+
 export const HAPPY_HOUR = {
   allDay: 'Monday',
   windows: [

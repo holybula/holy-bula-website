@@ -284,6 +284,16 @@
 .lounge-week .event-lines + p, .lounge-week .event-lines + p a { color: #281639; }
 .lounge-week .event-line p:first-of-type { font-weight: 750; letter-spacing: -0.025em; }
 .lounge-week .event-line[aria-current='date'] { background: #ccb5df; box-shadow: inset 3px 0 #5f427a; }
+.event-line .event-date-special {
+  width: fit-content;
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  background: #ccb5df;
+  color: #281639;
+}
+@media (min-width: 640px) {
+  .event-line .event-date-special { justify-self: end; }
+}
 .lounge-home #menu, .lounge-home #reviews { background: #130d1c; }
 .lounge-home #the-space, .lounge-home #rewards { background: #20132c; }
 .lounge-home .lounge-location { background: #120c1a; }

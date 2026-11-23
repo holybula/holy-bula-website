@@ -3,20 +3,26 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { BRAND } from '@/lib/constants'
-import { FORT_LAUDERDALE_SCHEDULE } from '@/lib/events'
+import { getWeeklySchedule, isThanksgivingSchedule } from '@/lib/events'
 import { getVenueClock } from '@/lib/locations'
 
 interface EventsThisWeekProps {
   pageMode?: boolean
+  initialThanksgiving: boolean
 }
 
-export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps) {
+export default function EventsThisWeek({ pageMode = false, initialThanksgiving }: EventsThisWeekProps) {
   const [today, setToday] = useState<number | null>(null)
+  const [showThanksgiving, setShowThanksgiving] = useState(initialThanksgiving)
 
   useEffect(() => {
-    const updateToday = () => setToday((getVenueClock().day + 6) % 7)
-    updateToday()
-    const interval = window.setInterval(updateToday, 60_000)
+    const updateSchedule = () => {
+      const now = new Date()
+      setToday((getVenueClock(now).day + 6) % 7)
+      setShowThanksgiving(isThanksgivingSchedule(now))
+    }
+    updateSchedule()
+    const interval = window.setInterval(updateSchedule, 60_000)
     return () => window.clearInterval(interval)
   }, [])
 
@@ -44,8 +50,9 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
 
           <div>
             <ul className="event-lines border-t border-hb-gold-border">
-              {FORT_LAUDERDALE_SCHEDULE.map((event, index) => {
+              {getWeeklySchedule(showThanksgiving).map((event, index) => {
                 const isToday = index === today
+                const isHoliday = showThanksgiving && event.day === 'Thursday'
 
                 return (
                   <li
@@ -58,7 +65,7 @@ export default function EventsThisWeek({ pageMode = false }: EventsThisWeekProps
                       {isToday && <span className="text-xs text-white/70">Today</span>}
                     </div>
                     <p className="text-base font-medium leading-snug text-hb-white sm:text-lg">{event.name}</p>
-                    <p className="mt-1 text-sm leading-snug text-white/70 sm:mt-0 sm:text-right">
+                    <p className={`mt-1 text-sm leading-snug text-white/70 sm:mt-0 sm:text-right ${isHoliday ? 'event-date-special' : ''}`}>
                       {event.time}
                     </p>
                   </li>

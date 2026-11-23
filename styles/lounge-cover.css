@@ -138,23 +138,6 @@
   letter-spacing: -0.045em;
   line-height: 0.93;
 }
-.lounge-home .lounge-week {
-  background: #f4e8d7;
-  color: #2d1928;
-  padding-block: clamp(2.2rem, 5vw, 4.5rem);
-}
-.lounge-home .lounge-week h2, .lounge-home .lounge-week .eyebrow { color: #2d1928; }
-.lounge-home .lounge-week .btn-outline-gold { color: #412434; border-color: #836872; }
-.lounge-home .lounge-week .btn-outline-gold:hover { background: #412434; color: #fff2e0; }
-.lounge-home .lounge-week .event-lines,
-.lounge-home .lounge-week .event-line { border-color: #91716f80; }
-.lounge-home .lounge-week .event-line p, .lounge-home .lounge-week .event-line span,
-.lounge-home .lounge-week .event-lines + p, .lounge-home .lounge-week .event-lines + p a { color: #452b36; }
-.lounge-home .lounge-week .event-line[aria-current="date"] {
-  background: #e7d0b0;
-  box-shadow: inset 3px 0 #8b4f59;
-}
-
 .lounge-home #menu, .lounge-home #reviews { background: #19111d; }
 .lounge-home #the-space, .lounge-home #rewards { background: #211623; }
 .lounge-home .lounge-location { background: #171019; }

@@ -3,11 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import EventsThisWeek from '@/components/home/EventsThisWeek'
 import HappyHourBar from '@/components/home/HappyHourBar'
+import { isThanksgivingSchedule } from '@/lib/events'
 import { FORT_LAUDERDALE } from '@/lib/locations'
+
+// Refresh the initial schedule for readers without JavaScript as the holiday ends.
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Events',
-  description: 'Weekly events and happy hour at Ascension in Fort Lauderdale. See the schedule for pool, FIFA, Friday Night Party, Football & Free Pizza, and more.',
+  description: 'Weekly events and happy hour at Ascension in Fort Lauderdale. See the schedule for pool, Thursday events, Friday Night Party, Football & Free Pizza, and more.',
   alternates: { canonical: '/events' },
 }
 
@@ -43,7 +47,7 @@ export default function EventsPage() {
       </section>
 
       <div className="venue-schedule py-10 md:py-14">
-        <EventsThisWeek pageMode />
+        <EventsThisWeek pageMode initialThanksgiving={isThanksgivingSchedule()} />
       </div>
 
       <HappyHourBar pageMode />
