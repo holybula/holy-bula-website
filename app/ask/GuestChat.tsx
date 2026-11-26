@@ -28,9 +28,10 @@ export default function GuestChat() {
         {examples.map(q => <button type="button" key={q} onClick={() => ask(q)} className="min-h-11 rounded-full border border-[#cdb6e94d] bg-[#2e1b3e] px-3 text-sm text-white hover:border-[#f0c78f]">{q}</button>)}
       </div>
       <form onSubmit={(event: FormEvent<HTMLFormElement>) => { event.preventDefault(); ask(input) }}>
+        <p id="lounge-emergency-note" className="mb-3 text-sm text-[#e1d6e3]">This chat is not monitored. In an emergency, <a href="tel:911" className="font-semibold text-[#f0c78f] underline underline-offset-4">call 911</a>.</p>
         <label htmlFor="lounge-question" className="mb-2 block text-sm font-semibold text-white">Your question</label>
         <div className="flex flex-wrap gap-2">
-          <input id="lounge-question" autoComplete="off" spellCheck={false} maxLength={300} value={input} onChange={event => setInput(event.target.value)} placeholder="What time do you close?" className="min-h-12 min-w-0 flex-1 border border-[#cdb6e980] bg-[#100a17] px-3 text-base text-white placeholder:text-white/60" />
+          <input id="lounge-question" aria-describedby="lounge-emergency-note" autoComplete="off" spellCheck={false} maxLength={300} value={input} onChange={event => setInput(event.target.value)} placeholder="What time do you close?" className="min-h-12 min-w-0 flex-1 border border-[#cdb6e980] bg-[#100a17] px-3 text-base text-white placeholder:text-white/60" />
           <button className="btn-gold" type="submit" disabled={!input.trim()}>Ask</button>
         </div>
       </form>
@@ -39,7 +40,11 @@ export default function GuestChat() {
           <div key={turn.id} className="break-words border-l-2 border-[#cfa5f1] bg-[#100a17] p-4 text-sm">
             <p className="font-semibold text-[#f0c78f]">{turn.question}</p>
             <p className="mt-1 text-white">{turn.reply.text}</p>
-            <Link href={turn.reply.href} className="inline-flex min-h-11 items-center text-[#f0c78f] underline underline-offset-4">{turn.reply.label}</Link>
+            {turn.reply.href === 'tel:911' ? (
+              <a href={turn.reply.href} className="inline-flex min-h-11 items-center text-[#f0c78f] underline underline-offset-4">{turn.reply.label}</a>
+            ) : (
+              <Link href={turn.reply.href} className="inline-flex min-h-11 items-center text-[#f0c78f] underline underline-offset-4">{turn.reply.label}</Link>
+            )}
           </div>
         ))}
       </div>
