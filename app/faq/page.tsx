@@ -32,7 +32,8 @@ export default function FaqPage() {
             Get in touch or come see us in Fort Lauderdale.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-gold">Contact us</Link>
+            <Link href="/ask" className="btn-gold">Ask the Lounge</Link>
+            <Link href="/contact" className="btn-outline">Contact us</Link>
             <Link href="/locations" className="btn-outline">Plan your visit</Link>
             <div className="basis-full">
               <Link href="/about" className="text-sm text-hb-gold underline underline-offset-4 hover:text-hb-off-white">

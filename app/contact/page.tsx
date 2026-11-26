@@ -49,9 +49,10 @@ export default function ContactPage() {
               </dd>
             </div>
           </dl>
-          <Link href="/locations" className="btn-outline-gold mt-7">
-            Hours &amp; Directions
-          </Link>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/ask" className="btn-gold">Ask the Lounge</Link>
+            <Link href="/locations" className="btn-outline-gold">Hours &amp; Directions</Link>
+          </div>
         </div>
         <div className="venue-masthead-photo relative min-h-64 overflow-hidden border border-[#d6ac76]/20">
           <Image

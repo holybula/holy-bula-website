@@ -19,6 +19,7 @@ export const FOOTER_LINKS = [
   ...NAV_LINKS,
   { label: 'Order', href: '/order' },
   { label: 'Reviews', href: '/reviews' },
+  { label: 'Ask the Lounge', href: '/ask' },
 ] as const
 
 export type LocationId = 'fort-lauderdale'
